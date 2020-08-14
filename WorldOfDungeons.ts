@@ -104,7 +104,7 @@ export enum ItemType {
 }
 
 export interface Item {
-  id: number,
+  id: number, // try using the uuid lib
   name: string,
   cost: number,
   packable: boolean, // is this something like a cart or a book?
@@ -131,7 +131,7 @@ export interface ItemInstance extends Item {
 }
 
 export interface Character {
-  id: number,
+  id: number, // try using the uuid lib
   attributes: Attributes,
   class: Class,
   coin: number,
@@ -152,7 +152,7 @@ export interface Character {
 export interface Hireling {
   costPerDay: number,
   equipment: Item[],
-  id: number,
+  id: number, // try using the uuid lib
   maxHitPoints: number,
   name: string,
   notes: string,
@@ -161,7 +161,7 @@ export interface Hireling {
 }
 
 export interface HirelingInstance extends Hireling { // TODO
-  id: number,
+  id: number, // ref to hireling
   currentHitPoints: number,
 }
 
@@ -179,7 +179,7 @@ export interface Characters {
 
 const baseItems: Item[] = [
   {
-    id: 1,
+    id: 1, // try using the uuid lib
     name: 'Dagger, short sword, or hand axe',
     cost: 10,
     packable: true, 
