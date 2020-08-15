@@ -21,7 +21,7 @@ export enum ItemClassificationType {
   heavyBow = 'Heavy Bow/Gun',
   lightArmor = 'Light Armor',
   fullArmor = 'Full Armor',
-  sheild = 'Sheild',
+  shield = 'Shield',
   advGear = 'Adventuring Gear',
   tools = 'Tools',
   occultItems = 'Occult Items',
@@ -60,7 +60,7 @@ export interface ItemInstance extends ItemTemplate {
   quantity: number,
   uuid: string, // id of Item
   currentUses: number | null,
-  equipped: boolean, // currently equipped for the character (sheild!!!)
+  equipped: boolean, // currently equipped for the character (shield!!!)
 }
 
 export const defaultItemTemplate: Omit<ItemTemplate, "uuid"> = {

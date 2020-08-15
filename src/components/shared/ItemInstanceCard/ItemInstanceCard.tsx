@@ -5,6 +5,8 @@ export interface ItemInstanceCardProps {
 }
 
 export const ItemInstanceCard = ({}: ItemInstanceCardProps) => {
+  // connect to the data 
+
   return (<div>
     ItemInstanceCard
   </div>);
