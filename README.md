@@ -10,6 +10,7 @@ Under construction
 - Add / remove items
 - Create swapping between multiple characters
 - Character creation process
+- Tracking process to show what has been done with the character?
 - custom abilities, skills, items?
 
 ## Tabs
