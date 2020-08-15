@@ -76,12 +76,11 @@ export const defaultItemTemplate: Omit<ItemTemplate, "uuid"> = {
 
 export class Item implements ItemTemplate {
   public static createItemTemplate(config: ItemTemplateConfig) {
-    const props: ItemTemplate = {
+    return new Item({
       ...defaultItemTemplate,
       ...config,
       uuid: uuidv4(),
-    }
-    return new Item(props);
+    });
   }
 
   public uuid: string;
@@ -123,11 +122,11 @@ export class Item implements ItemTemplate {
       damage: this.damage,
       description: this.description,
       type: this.type,
-      maxUses: this.maxUses,
+      maxUses: this.maxUses, // might not care about this since there's no weight so just use instance quantity?
       armor: this.armor,
       quantity: config?.quantity ?? 1,
       equipped: false,
-      currentUses: this.maxUses,
+      currentUses: this.maxUses, // might not care about this since there's no weight so just use instance quantity?
       uuid: uuidv4()
     }
   }

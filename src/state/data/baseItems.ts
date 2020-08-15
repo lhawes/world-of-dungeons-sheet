@@ -225,4 +225,4 @@ const rawData: ItemTemplateConfig[] = [
   }
 ];
 
-export const baseItems: Item[] = rawData.map((item: ItemTemplateConfig) => Item.createItemTemplate(item));
+export const baseItems: Item[] = rawData.map((itemConfig: ItemTemplateConfig) => Item.createItemTemplate(itemConfig));
