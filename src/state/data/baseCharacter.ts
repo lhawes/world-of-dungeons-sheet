@@ -2,7 +2,7 @@ import { Character, CharacterConfigType, Attribute, CharacterClassType } from '.
 import { ItemClassificationType, Handed } from '../models/Item';
 
 
-const rawData: CharacterConfigType = {
+export const rawCharacterData: CharacterConfigType = {
   attributes: {
     [Attribute.STR]: 1,
     [Attribute.DEX]: 1,
@@ -70,4 +70,4 @@ const rawData: CharacterConfigType = {
   xp: 0,
 }
 
-export const baseCharacter = Character.createCharacter(rawData);
+export const baseCharacter = Character.createCharacter(rawCharacterData);

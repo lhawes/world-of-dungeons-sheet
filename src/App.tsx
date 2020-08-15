@@ -1,8 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import { DebugComponent } from './state/debug';
-
-import { baseCharacter } from './state/data/baseCharacter';
+import { UserData } from './state/data/exampleUser'
 import { CharacterSheet } from './pages/CharacterSheet';
 
 class App extends React.Component {
@@ -14,7 +13,7 @@ class App extends React.Component {
         <br/>
         <CharacterSheet />
         <DebugComponent>
-          {normalizeData(baseCharacter)}
+          {normalizeData(UserData)}
         </DebugComponent>
       </div>
     );

@@ -1,6 +1,6 @@
 
 import { ItemInstance, ItemTemplateConfig, Item } from 'src/state/models/Item';
-import { Hireling, HirelingInstance } from './Hireling';
+import { HirelingInstance } from './Hireling';
 import { v4 as uuidv4 } from 'uuid';
 
 export enum CharacterClassType {
@@ -67,18 +67,6 @@ export interface SpecialAbilities {
   scout: boolean,
   volley: boolean,
   wild: boolean,
-}
-
-export interface UserType {
-  player: string,
-  version: string,
-  characters: CharacterType[],
-  hirelings: Hireling[],
-  custom: {
-    skills: any,
-    specialAbilities: any,
-    equipment: any, // Items
-  }
 }
 
 export interface CharacterType {

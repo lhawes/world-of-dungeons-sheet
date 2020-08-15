@@ -6,7 +6,7 @@ import {
   ArmorWeight
 } from '../models/Item';
 
-const rawData: ItemTemplateConfig[] = [
+const rawItemData: ItemTemplateConfig[] = [
   {
     armor: null,
     cost: 10, 
@@ -225,4 +225,4 @@ const rawData: ItemTemplateConfig[] = [
   }
 ];
 
-export const baseItems: Item[] = rawData.map((itemConfig: ItemTemplateConfig) => Item.createItemTemplate(itemConfig));
+export const baseItems: Item[] = rawItemData.map((itemConfig: ItemTemplateConfig) => Item.createItemTemplate(itemConfig));
