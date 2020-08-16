@@ -2,9 +2,9 @@
 Under construction
 
 ## TODO
-- Finish data representation of characters
-- Create basic UI for sheet
-- Display the app like a character sheet for World of Dungeons with hard coded character
+- Add in all other derivative data
+- Make the sheet interactive
+- UI overhaul for aesthetics
 - Create saving/loading mechanism for the character sheet + data (local data?)
 - Enable user to toggle editing their character
 - Add / remove items

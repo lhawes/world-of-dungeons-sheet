@@ -6,6 +6,6 @@ export interface SheetControllerProps {
 
 export const SheetController = ({}: SheetControllerProps) => {
   return (<div>
-    SheetController
+    Sheet Controller to toggle edit mode
   </div>);
 }

@@ -1,5 +1,5 @@
 import { Character, CharacterConfigType, Attribute, CharacterClassType } from '../models/Character'
-import { ItemClassificationType, Handed } from '../models/Item';
+import { ItemClassificationType, Handed, ArmorWeight } from '../models/Item';
 
 
 export const rawCharacterData: CharacterConfigType = {
@@ -28,13 +28,26 @@ export const rawCharacterData: CharacterConfigType = {
     type: ItemClassificationType.martialWeapon,
     maxUses: null, 
     armor: null,
-  }],
+  },{
+    name: 'Leather Armor',
+    cost: 24,
+    packable: true, 
+    damage: null, 
+    description: 'Light Armor, worn with battle.',
+    type: ItemClassificationType.lightArmor,
+    maxUses: null, 
+    armor: {
+      base: 1,
+      bonus: 0,
+      class: ArmorWeight.light,
+    },
+  },],
   rawHirelings: [],
   level: 1,
   maxHitPoints: 8,
   currentHitPoints: 8,
   skills: {
-    atheltics: true,
+    athletics: true,
     awareness: true,
     deception: false,
     decipher: false,

@@ -35,7 +35,7 @@ export interface Attributes {
 }
 
 export interface Skills {
-  atheltics: boolean,
+  athletics: boolean,
   awareness: boolean,
   deception: boolean,
   decipher: boolean,
@@ -107,7 +107,7 @@ export const defaultCharacter: Omit<CharacterType, "uuid"> = {
   maxHitPoints: 10,
   currentHitPoints: 10,
   skills: {
-    atheltics: false,
+    athletics: false,
     awareness: false,
     deception: false,
     decipher: false,

@@ -6,6 +6,6 @@ export interface AdvancementProps {
 
 export const Advancement = ({}: AdvancementProps) => {
   return (<div>
-    Advancement
+    Advancement link to level advancement
   </div>);
 }
