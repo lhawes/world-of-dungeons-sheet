@@ -76,7 +76,7 @@ export interface CharacterType {
   coin: number,
   equipment: ItemInstance[], //
   hirelings: HirelingInstance[], // hireling id
-  hitDice: number,
+  // hitDice: number, // actually this is derived.
   maxHitPoints: number,
   currentHitPoints: number,
   level: Level,
@@ -101,7 +101,7 @@ export const defaultCharacter: Omit<CharacterType, "uuid"> = {
   coin: 0,
   equipment: [], //
   hirelings: [], // hireling id
-  hitDice: 1,
+  // hitDice: 1,
   level: 1,
   name: 'default',
   notes: '',
@@ -168,7 +168,7 @@ export class Character implements CharacterType {
   public coin: number;
   public equipment: ItemInstance[];
   public hirelings: HirelingInstance[];
-  public hitDice: number;
+  // public hitDice: number;
   public maxHitPoints: number; // we may not care about this since hp gets rerolled when healing.
   public currentHitPoints: number;
   public level: Level;
@@ -185,7 +185,7 @@ export class Character implements CharacterType {
     this.coin = config.coin;
     this.equipment = config.equipment;
     this.hirelings = config.hirelings;
-    this.hitDice = config.hitDice;
+    // this.hitDice = config.hitDice;
     this.maxHitPoints = config.maxHitPoints;
     this.currentHitPoints = config.currentHitPoints;
     this.level = config.level;
