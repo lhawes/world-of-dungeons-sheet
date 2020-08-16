@@ -5,6 +5,7 @@ import { getSelectedCharacterWeapons } from 'src/state/characters/characterSelec
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { ItemInstance } from 'src/state/models/Item';
 import { normalizeData } from 'src/utils/normalizeData';
+import { Block } from 'src/components/shared/Block/Block';
 
 export interface WeaponsProps {
   [key: string]: any;
@@ -18,7 +19,7 @@ export const Weapons: React.FC<WeaponsProps> = ({}) => {
     return { name: item.name };
   })
 
-  return (<div>
+  return (<Block>
     Weapons: { normalizeData(weaponNames) }
-  </div>);
+  </Block>);
 }

@@ -2,13 +2,14 @@ import * as React from 'react';
 import './App.css';
 import { DebugComponent } from './components/shared/debug';
 import { UserData } from './state/data/exampleUser'
-import { CharacterSheet } from './pages/CharacterSheet';
+import { CharacterSheetPage } from './pages/CharacterSheetPage';
 import { useReducer, useEffect } from 'react';
 import { rootReducer } from './state/rootReducer';
 import { rootInitialState } from './state/rootInitialState';
 import { addCharacterAction } from './state/characters/characterActions';
 import { defaultDispatch } from './utils/defaultDispatch';
 import { normalizeData } from './utils/normalizeData';
+import { BodyContainer } from './components/shared/BodyContainer/BodyContainer';
 
 export const StateContext = React.createContext(rootInitialState);
 export const DispatchContext = React.createContext(defaultDispatch);
@@ -24,14 +25,12 @@ const App = () => {
   return (
     <DispatchContext.Provider value={dispatch}>
       <StateContext.Provider value={state}>
-        <div className="App">
-          <h3>World of Dungeons</h3>
-          <br/>
-          <CharacterSheet />
+        <BodyContainer>
+          <CharacterSheetPage />
           <DebugComponent>
             {normalizeData(state)}
           </DebugComponent>
-        </div>
+        </BodyContainer>
       </StateContext.Provider>
     </DispatchContext.Provider>
   );

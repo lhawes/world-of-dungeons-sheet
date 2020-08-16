@@ -17,36 +17,37 @@ import { Advancement } from '../components/characterSheet/Advancement/Advancemen
 import { SheetController } from '../components/characterSheet/SheetController/SheetController';
 import { TotalArmor } from 'src/components/characterSheet/TotalArmor/TotalArmor';
 import { UnequippedEquipment } from 'src/components/characterSheet/UnequippedEquipment/UnequippedEquipment';
+import { Section } from 'src/components/shared/Section/Section';
 
-export interface CharacterSheetProps {
+export interface CharacterSheetPageProps {
   [key: string]: any
 }
 
-export const CharacterSheet = ({}: CharacterSheetProps) => {
+export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
   return (
     <>
-      <section>
+      <Section>
       <CharacterName/><CharacterClass /><Level /><SheetController />
-      </section>
-      <section>
+      </Section>
+      <Section>
         <Attributes/><Skills /><Abilities />
-      </section>
-      <section>
+      </Section>
+      <Section>
         <Weapons/><PackEquipment />
-      </section>
-      <section>
+      </Section>
+      <Section>
         <ArmorSpeed/><HitDice /><HitPoints />
-      </section>
-      <section>
+      </Section>
+      <Section>
         <Notes />
-      </section>
-      <section>
+      </Section>
+      <Section>
         <Coin /><CharacterXp /><Advancement />
-      </section>
-      <section>
+      </Section>
+      <Section>
         <TotalArmor />
         <UnequippedEquipment />
-      </section>
+      </Section>
     </>
   );
 }

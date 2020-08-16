@@ -4,7 +4,7 @@ export interface ItemInstanceCardProps {
   [key: string]: any;
 }
 
-export const ItemInstanceCard = ({}: ItemInstanceCardProps) => {
+export const ItemInstanceCard: React.FC<ItemInstanceCardProps> = ({}) => {
   // connect to the data 
 
   return (<div>

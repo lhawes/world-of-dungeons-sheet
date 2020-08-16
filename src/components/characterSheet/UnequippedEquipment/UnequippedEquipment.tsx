@@ -5,6 +5,7 @@ import { getSelectedCharacterUnequippedEquipment } from 'src/state/characters/ch
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { normalizeData } from 'src/utils/normalizeData';
 import { ItemInstance } from 'src/state/models/Item';
+import { Block } from 'src/components/shared/Block/Block';
 
 export interface UnequippedEquipmentProps {
   [key: string]: any;
@@ -17,7 +18,7 @@ export const UnequippedEquipment: React.FC<UnequippedEquipmentProps> = ({}) => {
     return { name: item.name };
   })
 
-  return (<div>
+  return (<Block>
     UnequippedEquipment: { normalizeData(unequippedEquipmentNames) }
-  </div>);
+  </Block>);
 }

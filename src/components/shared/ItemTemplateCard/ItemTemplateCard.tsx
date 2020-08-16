@@ -4,7 +4,7 @@ export interface ItemTemplateCardProps {
   [key: string]: any;
 }
 
-export const ItemTemplateCard = ({}: ItemTemplateCardProps) => {
+export const ItemTemplateCard: React.FC<ItemTemplateCardProps> = ({}) => {
   return (<div>
     ItemTemplateCard
   </div>);
