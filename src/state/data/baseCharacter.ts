@@ -14,7 +14,7 @@ export const rawCharacterData: CharacterConfigType = {
   name: 'Harud',
   notes: 'Harud left his family farm after it was pillaged and burnt to the ground by a roving band of Orken.',
   class: CharacterClassType.fighter,
-  coin: 11,
+  coin: 60,
   rawEquipment: [{
     name: 'Family Long Sword',
     cost: 30,

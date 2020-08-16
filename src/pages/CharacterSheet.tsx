@@ -41,6 +41,12 @@ export const CharacterSheet = ({}: CharacterSheetProps) => {
       <section>
         <Coin /><CharacterXp /><Advancement />
       </section>
+      <section>
+        Total Armor value TODO
+        Equipment not in pack TODO
+        Abilities map TODO
+        Level advancement map TODO
+      </section>
     </>
   );
 }

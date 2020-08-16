@@ -6,9 +6,11 @@ Under construction
 - Make the sheet interactive
 - UI overhaul for aesthetics
 - Create saving/loading mechanism for the character sheet + data (local data?)
+- Tool tip for rules and notes
 - Enable user to toggle editing their character
 - Add / remove items
 - Create swapping between multiple characters
+- Add Hirelings to a character
 - Character creation process
 - Tracking process to show what has been done with the character?
 - custom abilities, skills, items?

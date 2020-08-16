@@ -82,3 +82,6 @@ export const getSelectedCharacterSkills = (state: AppState): Skills =>
 export const getSelectedCharacterXp = (state: AppState): number => 
   getSelectedCharacter(state)?.xp ?? 0;
 
+// getSelectedCharacterTotalArmor
+// equipped armor + any armor with a bonus?
+
