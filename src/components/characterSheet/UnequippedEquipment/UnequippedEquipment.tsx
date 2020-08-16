@@ -10,7 +10,7 @@ export interface UnequippedEquipmentProps {
   [key: string]: any;
 }
 
-export const UnequippedEquipment = ({}: UnequippedEquipmentProps) => {
+export const UnequippedEquipment: React.FC<UnequippedEquipmentProps> = ({}) => {
   const state = useContext(StateContext);
   const unequippedEquipment = useMemo(() => getSelectedCharacterUnequippedEquipment(state), [state[CharacterStateKey]]);
   const unequippedEquipmentNames = unequippedEquipment.map((item: ItemInstance) => {

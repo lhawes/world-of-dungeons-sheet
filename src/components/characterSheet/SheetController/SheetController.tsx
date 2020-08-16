@@ -4,7 +4,7 @@ export interface SheetControllerProps {
   [key: string]: any;
 }
 
-export const SheetController = ({}: SheetControllerProps) => {
+export const SheetController: React.FC<SheetControllerProps> = ({}) => {
   return (<div>
     Sheet Controller to toggle edit mode
   </div>);

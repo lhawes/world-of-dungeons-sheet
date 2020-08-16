@@ -9,7 +9,7 @@ export interface SkillsProps {
   [key: string]: any;
 }
 
-export const Skills = ({}: SkillsProps) => {
+export const Skills: React.FC<SkillsProps> = ({}) => {
   const state = useContext(StateContext);
   const skills = useMemo(() => getSelectedCharacterSkills(state), [state[CharacterStateKey]]);
   const activeSkills = Object

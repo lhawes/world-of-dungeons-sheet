@@ -4,7 +4,7 @@ export interface AdvancementProps {
   [key: string]: any;
 }
 
-export const Advancement = ({}: AdvancementProps) => {
+export const Advancement: React.FC<AdvancementProps> = ({}) => {
   return (<div>
     Advancement link to level advancement
   </div>);

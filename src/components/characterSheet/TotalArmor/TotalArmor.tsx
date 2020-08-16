@@ -9,7 +9,7 @@ export interface TotalArmorProps {
   [key: string]: any;
 }
 
-export const TotalArmor = ({}: TotalArmorProps) => {
+export const TotalArmor: React.FC<TotalArmorProps> = ({}) => {
   const state = useContext(StateContext);
   const totalArmor = useMemo(() => getSelectedCharacterTotalArmor(state), [state[CharacterStateKey]]);
 

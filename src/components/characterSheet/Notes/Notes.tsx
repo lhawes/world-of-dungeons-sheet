@@ -8,7 +8,7 @@ export interface NotesProps {
   [key: string]: any;
 }
 
-export const Notes = ({}: NotesProps) => {
+export const Notes: React.FC<NotesProps> = ({}) => {
   const state = useContext(StateContext);
   const notes = useMemo(() => getSelectedCharacterNotes(state), [state[CharacterStateKey]]);
 

@@ -9,7 +9,7 @@ export interface HitDiceProps {
   [key: string]: any;
 }
 
-export const HitDice = ({}: HitDiceProps) => {
+export const HitDice: React.FC<HitDiceProps> = ({}) => {
   const state = useContext(StateContext);
   const level = useMemo(() => getSelectedCharacterLevel(state), [state[CharacterStateKey]]);
   const attributes = useMemo(() => getSelectedCharacterAttributes(state), [state[CharacterStateKey]]);

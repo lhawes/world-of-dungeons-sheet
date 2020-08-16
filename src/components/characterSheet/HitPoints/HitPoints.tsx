@@ -8,7 +8,7 @@ export interface HitPointsProps {
   [key: string]: any;
 }
 
-export const HitPoints = ({}: HitPointsProps) => {
+export const HitPoints: React.FC<HitPointsProps> = ({}) => {
   const state = useContext(StateContext);
   const hitPoints = useMemo(() => getSelectedCharacterHitPoints(state), [state[CharacterStateKey]]);
 

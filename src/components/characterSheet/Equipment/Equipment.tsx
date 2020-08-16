@@ -10,7 +10,7 @@ export interface EquipmentProps {
   [key: string]: any;
 }
 
-export const PackEquipment = ({}: EquipmentProps) => {
+export const PackEquipment: React.FC<EquipmentProps> = ({}) => {
   const state = useContext(StateContext);
   const equipment = useMemo(() => getSelectedCharacterAllEquipment(state), [state[CharacterStateKey]]);
 

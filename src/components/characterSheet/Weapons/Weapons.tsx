@@ -10,7 +10,7 @@ export interface WeaponsProps {
   [key: string]: any;
 }
 
-export const Weapons = ({}: WeaponsProps) => {
+export const Weapons: React.FC<WeaponsProps> = ({}) => {
   const state = useContext(StateContext);
   const weapon = useMemo(() => getSelectedCharacterWeapons(state), [state[CharacterStateKey]]);
 

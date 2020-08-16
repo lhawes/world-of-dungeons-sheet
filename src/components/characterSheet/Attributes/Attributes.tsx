@@ -9,7 +9,7 @@ export interface AttributesProps {
   [key: string]: any;
 }
 
-export const Attributes = ({}: AttributesProps) => {
+export const Attributes: React.FC<AttributesProps> = ({}) => {
   const state = useContext(StateContext);
   const attributes = useMemo(() => getSelectedCharacterAttributes(state), [state[CharacterStateKey]]);
   const normalizedAttributes = normalizeData(attributes);

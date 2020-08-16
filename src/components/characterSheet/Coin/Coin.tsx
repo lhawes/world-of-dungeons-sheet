@@ -8,7 +8,7 @@ export interface CoinProps {
   [key: string]: any;
 }
 
-export const Coin = ({}: CoinProps) => {
+export const Coin: React.FC<CoinProps> = ({}) => {
   const state = useContext(StateContext);
   const silver = useMemo(() => getSelectedCharacterCoin(state), [state[CharacterStateKey]]);
 

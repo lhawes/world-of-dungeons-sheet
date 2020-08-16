@@ -8,7 +8,7 @@ export interface CharacterNameProps {
   [key: string]: any;
 }
 
-export const CharacterName = ({}: CharacterNameProps) => {
+export const CharacterName: React.FC<CharacterNameProps> = ({}) => {
   const state = useContext(StateContext);
   const characterName = useMemo(() => getSelectedCharacterName(state), [state[CharacterStateKey]])
 

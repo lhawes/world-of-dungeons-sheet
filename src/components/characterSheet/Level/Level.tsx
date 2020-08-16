@@ -8,7 +8,7 @@ export interface LevelProps {
   [key: string]: any;
 }
 
-export const Level = ({}: LevelProps) => {
+export const Level: React.FC<LevelProps> = ({}) => {
   const state = useContext(StateContext);
   const level = useMemo(() => getSelectedCharacterLevel(state), [state[CharacterStateKey]]);
 

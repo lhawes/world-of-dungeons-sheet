@@ -8,7 +8,7 @@ export interface CharacterXpProps {
   [key: string]: any;
 }
 
-export const CharacterXp = ({}: CharacterXpProps) => {
+export const CharacterXp: React.FC<CharacterXpProps> = ({}) => {
   const state = useContext(StateContext);
   const xp = useMemo(() => getSelectedCharacterXp(state), [state[CharacterStateKey]]);
 

@@ -8,7 +8,7 @@ export interface ArmorSpeedProps {
   [key: string]: any;
 }
 
-export const ArmorSpeed = ({}: ArmorSpeedProps) => {
+export const ArmorSpeed: React.FC<ArmorSpeedProps> = ({}) => {
   const state = useContext(StateContext);
   const speed = useMemo(() => getSelectedCharacterArmorSpeed(state), [state[CharacterStateKey]]);
 
