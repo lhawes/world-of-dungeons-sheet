@@ -1,7 +1,9 @@
 import { AppState } from '../rootInitialState'
 import { CharacterStateKey, CharacterReducerState } from './characterReducer';
-import { CharacterType, SpecialAbilities, Attributes, Skills } from '../models/Character';
+import { CharacterType, CharacterAbilities, Attributes, CharacterSkills } from '../models/Character';
 import { ItemInstance, ArmorWeight } from '../models/Item';
+import { isWeapon, isArmor, isWornArmor, isShield } from 'src/constants/itemCategories';
+import { wornArmorSpeed } from 'src/constants/wornArmorSpeed';
 
 export const getCharacterSection = (state: AppState): CharacterReducerState => 
   state[CharacterStateKey];
@@ -20,42 +22,54 @@ export const getSelectedCharacter = (state: AppState): CharacterType => {
 export const getSelectedCharacterName = (state: AppState): string => 
   getSelectedCharacter(state)?.name ?? null;
 
-export const getSelectedCharacterAbilities = (state: AppState): SpecialAbilities => 
+export const getSelectedCharacterAbilities = (state: AppState): CharacterAbilities => 
   getSelectedCharacter(state)?.specialAbilities ?? {};
 
-export const getSelectedCharacterEquipment = (state: AppState): ItemInstance[] => 
+export const getSelectedCharacterAllEquipment = (state: AppState): ItemInstance[] => 
   getSelectedCharacter(state)?.equipment ?? [];
 
-export const getSelectedCharacterArmor = (state: AppState): ItemInstance[] => {
-  return getSelectedCharacterEquipment(state).filter((item: ItemInstance) => {
-    return !!item.armor;
+export const getSelectedCharacterUnequippedEquipment = (state: AppState): ItemInstance[] => {
+  return getSelectedCharacterAllEquipment(state).filter((item: ItemInstance) => {
+    return !item.equipped || !item.packable;
+  });
+}
+
+export const getSelectedCharacterArmorAndSheilds = (state: AppState): ItemInstance[] => {
+  return getSelectedCharacterAllEquipment(state).filter((item: ItemInstance) => {
+    return item.itemClassification && isArmor[item.itemClassification];
   })
 }
 
 export const getSelectedCharacterWeapons = (state: AppState): ItemInstance[] => {
-  return getSelectedCharacterEquipment(state).filter((item: ItemInstance) => {
-    return !!item.damage;
+  return getSelectedCharacterAllEquipment(state).filter((item: ItemInstance) => {
+    return item.itemClassification && isWeapon[item.itemClassification];
   })
 }
 
-export const getSelectedCharacterActiveArmor = (state: AppState): ItemInstance => {
-  return getSelectedCharacterArmor(state).filter((item: ItemInstance) => {
-    return !!item.equipped;
+export const getSelectedCharacterActiveWornArmor = (state: AppState): ItemInstance => {
+  return getSelectedCharacterArmorAndSheilds(state).filter((item: ItemInstance) => {
+    return item.equipped && item.itemClassification && isWornArmor[item.itemClassification];
+  })[0] ?? null;
+}
+
+export const getSelectedCharacterShields = (state: AppState): ItemInstance[] => {
+  return getSelectedCharacterAllEquipment(state).filter((item: ItemInstance) => {
+    return item.itemClassification && isShield[item.itemClassification];
+  });
+}
+
+export const getSelectedCharacterActiveShield = (state: AppState): ItemInstance => {
+  return getSelectedCharacterShields(state).filter((item: ItemInstance) => {
+    return item.equipped;
   })[0] ?? null;
 }
 
 export const getSelectedCharacterActiveArmorClass = (state: AppState): ArmorWeight | null => 
-  getSelectedCharacterActiveArmor(state)?.armor?.class ?? null;
+  getSelectedCharacterActiveWornArmor(state)?.armor?.class ?? null;
 
 export const getSelectedCharacterArmorSpeed = (state: AppState): string => {
-  const speedMap = {
-    [ArmorWeight.full]: 'Slow',
-    [ArmorWeight.light]: 'Normal',
-    [ArmorWeight.none]: 'Fast',
-  };
   const ActiveArmor = getSelectedCharacterActiveArmorClass(state);
-
-  return ActiveArmor ? speedMap[ActiveArmor] : speedMap[ArmorWeight.none];
+  return ActiveArmor ? wornArmorSpeed[ActiveArmor] : wornArmorSpeed[ArmorWeight.none];
 }
 
 export const getSelectedCharacterAttributes = (state: AppState): Attributes => 
@@ -76,12 +90,15 @@ export const getSelectedCharacterHitPoints = (state: AppState): number =>
 export const getSelectedCharacterNotes = (state: AppState): string => 
   getSelectedCharacter(state)?.notes ?? '';
 
-export const getSelectedCharacterSkills = (state: AppState): Skills => 
+export const getSelectedCharacterSkills = (state: AppState): CharacterSkills => 
   getSelectedCharacter(state)?.skills ?? {};
 
 export const getSelectedCharacterXp = (state: AppState): number => 
   getSelectedCharacter(state)?.xp ?? 0;
 
-// getSelectedCharacterTotalArmor
-// equipped armor + any armor with a bonus?
-
+export const getSelectedCharacterTotalArmor = (state: AppState): number => {
+  const baseArmor = getSelectedCharacterActiveWornArmor(state)?.armor?.base ?? 0;
+  const sheild = getSelectedCharacterActiveShield(state)?.armor?.bonus ?? 0;
+  return baseArmor + sheild;
+}
+  

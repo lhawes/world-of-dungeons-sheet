@@ -3,8 +3,8 @@ Under construction
 
 ## TODO
 - Add in all other derivative data
-- Make the sheet interactive
 - UI overhaul for aesthetics
+- Make the sheet interactive
 - Create saving/loading mechanism for the character sheet + data (local data?)
 - Tool tip for rules and notes
 - Enable user to toggle editing their character

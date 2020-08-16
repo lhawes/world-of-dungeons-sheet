@@ -45,7 +45,7 @@ export interface ItemTemplate {
     hands: Handed | null,
   } | null,
   description: string,
-  type: ItemClassificationType | null,
+  itemClassification: ItemClassificationType | null,
   maxUses: number | null, // current uses will need to be tracked per instance
   armor: { // determines if armor
     base: number,
@@ -69,7 +69,7 @@ export const defaultItemTemplate: Omit<ItemTemplate, "uuid"> = {
   packable: true,
   damage: null,
   description: 'default',
-  type: null,
+  itemClassification: null,
   maxUses: null,
   armor: null,
 }
@@ -93,7 +93,7 @@ export class Item implements ItemTemplate {
     hands: Handed | null,
   } | null;
   public description: string; 
-  public type: ItemClassificationType | null; 
+  public itemClassification: ItemClassificationType | null; 
   public maxUses: number | null; 
   public armor: {
     base: number,
@@ -108,7 +108,7 @@ export class Item implements ItemTemplate {
     this.packable = config.packable;
     this.damage = config.damage;
     this.description = config.description;
-    this.type = config.type;
+    this.itemClassification = config.itemClassification;
     this.maxUses = config.maxUses;
     this.armor = config.armor;
   }
@@ -121,11 +121,11 @@ export class Item implements ItemTemplate {
       packable: this.packable,
       damage: this.damage,
       description: this.description,
-      type: this.type,
+      itemClassification: this.itemClassification,
       maxUses: this.maxUses, // might not care about this since there's no weight so just use instance quantity?
       armor: this.armor,
       quantity: config?.quantity ?? 1,
-      equipped: false,
+      equipped: true,
       currentUses: this.maxUses, // might not care about this since there's no weight so just use instance quantity?
       uuid: uuidv4()
     }

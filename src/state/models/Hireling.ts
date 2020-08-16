@@ -1,4 +1,4 @@
-import { Skills } from './Character';
+import { CharacterSkills } from './Character';
 import { ItemInstance } from 'src/state/models/Item';
 
 export interface Hireling {
@@ -7,7 +7,7 @@ export interface Hireling {
   uuid: string, 
   name: string,
   notes: string,
-  skills: Skills,
+  skills: CharacterSkills,
   // armor speed is determined by what is equiped
 }
 
