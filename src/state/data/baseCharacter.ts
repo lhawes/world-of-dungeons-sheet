@@ -26,7 +26,6 @@ export const rawCharacterData: CharacterConfigType = {
     }, 
     description: 'Passed down by his Uncle.',
     itemClassification: ItemClassificationType.martialWeapon,
-    maxUses: null, 
     armor: null,
   },{
     name: 'Leather Armor',
@@ -35,7 +34,6 @@ export const rawCharacterData: CharacterConfigType = {
     damage: null, 
     description: 'Light Armor, worn with battle.',
     itemClassification: ItemClassificationType.lightArmor,
-    maxUses: null, 
     armor: {
       base: 1,
       bonus: 0,
@@ -48,7 +46,6 @@ export const rawCharacterData: CharacterConfigType = {
     damage: null, 
     description: 'Light Armor, worn with battle.',
     itemClassification: ItemClassificationType.lightArmor,
-    maxUses: null, 
     armor: null
   },
   ],

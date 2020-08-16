@@ -46,7 +46,6 @@ export interface ItemTemplate {
   } | null,
   description: string,
   itemClassification: ItemClassificationType | null,
-  maxUses: number | null, // current uses will need to be tracked per instance
   armor: { // determines if armor
     base: number,
     bonus: number,
@@ -59,7 +58,6 @@ export interface ItemTemplateConfig extends Partial<ItemTemplate> {};
 export interface ItemInstance extends ItemTemplate {
   quantity: number,
   uuid: string, // id of Item
-  currentUses: number | null,
   equipped: boolean, // currently equipped for the character (shield!!!)
 }
 
@@ -70,7 +68,6 @@ export const defaultItemTemplate: Omit<ItemTemplate, "uuid"> = {
   damage: null,
   description: 'default',
   itemClassification: null,
-  maxUses: null,
   armor: null,
 }
 
@@ -94,7 +91,6 @@ export class Item implements ItemTemplate {
   } | null;
   public description: string; 
   public itemClassification: ItemClassificationType | null; 
-  public maxUses: number | null; 
   public armor: {
     base: number,
     bonus: number,
@@ -109,7 +105,6 @@ export class Item implements ItemTemplate {
     this.damage = config.damage;
     this.description = config.description;
     this.itemClassification = config.itemClassification;
-    this.maxUses = config.maxUses;
     this.armor = config.armor;
   }
 
@@ -122,11 +117,9 @@ export class Item implements ItemTemplate {
       damage: this.damage,
       description: this.description,
       itemClassification: this.itemClassification,
-      maxUses: this.maxUses, // might not care about this since there's no weight so just use instance quantity?
       armor: this.armor,
       quantity: config?.quantity ?? 1,
       equipped: true,
-      currentUses: this.maxUses, // might not care about this since there's no weight so just use instance quantity?
       uuid: uuidv4()
     }
   }

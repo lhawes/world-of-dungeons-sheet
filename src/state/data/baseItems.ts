@@ -16,7 +16,6 @@ const rawItemData: ItemTemplateConfig[] = [
       hands: Handed.off,
     },
     description: 'May be weilded as an off handed weapon to re-roll damage once per attack.',
-    maxUses: null, 
     name: 'Dagger, short sword, or hand axe',
     packable: true, 
     itemClassification: ItemClassificationType.lightWeapon,
@@ -32,7 +31,6 @@ const rawItemData: ItemTemplateConfig[] = [
     }, 
     description: 'Must be weilded in main hand.',
     itemClassification: ItemClassificationType.martialWeapon,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -46,7 +44,6 @@ const rawItemData: ItemTemplateConfig[] = [
     }, 
     description: 'Must be weilded in main hand.',
     itemClassification: ItemClassificationType.greatWeapon,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -60,7 +57,6 @@ const rawItemData: ItemTemplateConfig[] = [
     }, 
     description: 'Also slings etc.',
     itemClassification: ItemClassificationType.shortbow,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -74,7 +70,6 @@ const rawItemData: ItemTemplateConfig[] = [
     }, 
     description: 'Also crossbows, pistols, etc.',
     itemClassification: ItemClassificationType.bow,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -88,7 +83,6 @@ const rawItemData: ItemTemplateConfig[] = [
     }, 
     description: 'Damage if firing from a stationary position. Includes arbalests and musckets.',
     itemClassification: ItemClassificationType.heavyBow,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -98,7 +92,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Light Armor',
     itemClassification: ItemClassificationType.lightArmor,
-    maxUses: null, 
     armor: {
       base: 1,
       bonus: 0,
@@ -112,7 +105,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Always includes a helm. Makes it very hard to run, move quietly, swim, leap etc.',
     itemClassification: ItemClassificationType.lightArmor,
-    maxUses: null, 
     armor: {
       base: 2,
       bonus: 0,
@@ -126,7 +118,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: '',
     itemClassification: ItemClassificationType.shield,
-    maxUses: null, 
     armor: {
       base: 0,
       bonus: 1,
@@ -140,7 +131,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: '20ft Rops. Iron Spike, Chalk, Parchment, Flint/Steel, Torches x4, Tent, Dice, Caltrops (slows pursuers), Bandages, Travel Rations, Waterskin, Wineskin.',
     itemClassification: ItemClassificationType.advGear,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -150,7 +140,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Crowbar, Hatchet, Animal Trap, Lockpicks, Pen & Pot of Ink, Fishing Pole, Shovel, Grappling Hook, Pickaxe, Collapsible Pole.',
     itemClassification: ItemClassificationType.tools,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -160,7 +149,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Quicksilver (per dose), Pouch of Bone Dust, Vial of Holy Water (one use), Vial of Blood, Ritual Incense and Oils.',
     itemClassification: ItemClassificationType.occultItems,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -170,7 +158,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Mirror, Lantern, Spyglass, Sand Timer, Board Game, Elaborate Clothes, Holy Symbols and other charms.',
     itemClassification: ItemClassificationType.fancyItems,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -180,7 +167,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Sets an area on fire (1d6 + 1 damage/round for 3 rounds unless extinguished). Fills a lantern 10 times.',
     itemClassification: ItemClassificationType.oil,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -190,7 +176,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Row boat (50s) to Galley (200,000s).',
     itemClassification: ItemClassificationType.boats,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -200,7 +185,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Cart (30s) to Wagon (100s).',
     itemClassification: ItemClassificationType.carts,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -210,7 +194,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'House (1,000s) to Manor (100,000s).',
     itemClassification: ItemClassificationType.property,
-    maxUses: null, 
     armor: null,
   },
   {
@@ -220,7 +203,6 @@ const rawItemData: ItemTemplateConfig[] = [
     damage: null, 
     description: 'Mule (30s), Horse (100s), Warhorse (1000s).',
     itemClassification: ItemClassificationType.horses,
-    maxUses: null, 
     armor: null,
   }
 ];
