@@ -3,7 +3,10 @@ import { rawCharacterData } from './baseCharacter';
 
 
 const rawUserData: UserConfigType = {
-  player: 'lhawes',
+  userData: {
+    player: 'lhawes',
+    version: 'v0.0.1'
+  },
   rawCharacters: [rawCharacterData],
   rawHirelings: [],
   hirelings: [],

@@ -9,8 +9,10 @@ export interface CustomContent {
 }
 
 export interface UserType {
-  player: string,
-  version: string,
+  userData: {
+    player: string,
+    version: string,
+  },
   characters: CharacterType[],
   hirelings: Hireling[],
   custom: CustomContent | null;
@@ -22,8 +24,10 @@ export interface UserConfigType extends Partial<UserType> {
 }
 
 export const userDefaults: UserType = {
-  player: 'default player name',
-  version: VERSION,
+  userData: {
+    player: 'default player name',
+    version: VERSION,
+  },
   characters: [],
   hirelings: [],
   custom: null
@@ -41,16 +45,16 @@ export class User implements UserType {
     })
   }
 
-
-  public player: string;
-  public version: string;
+  public userData: {
+    player: string;
+    version: string;
+  };
   public characters: CharacterType[];
   public hirelings: Hireling[];
   public custom: CustomContent | null;
 
   constructor(config: UserType) {
-    this.player = config.player;
-    this.version = config.version;
+    this.userData = config.userData;
     this.characters = config.characters;
     this.hirelings = config.hirelings;
     this.custom = config.custom;
