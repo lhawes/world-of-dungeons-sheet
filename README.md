@@ -12,6 +12,7 @@ Under construction
 - Character creation process
 - Tracking process to show what has been done with the character?
 - custom abilities, skills, items?
+- version backwards compatibility?
 
 ## Tabs
 - Character select tab, aka DM screen?

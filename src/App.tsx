@@ -3,22 +3,24 @@ import './App.css';
 import { DebugComponent } from './components/shared/debug';
 import { UserData } from './state/data/exampleUser'
 import { CharacterSheet } from './pages/CharacterSheet';
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import { rootReducer } from './state/rootReducer';
 import { rootInitialState } from './state/rootInitialState';
-
-const normalizeData = (data: any) => JSON.stringify(data, null, 4);
-
-const defaultDispatch = (action: {type:string}) => {
-  throw new Error('Context consumer provided with default dispatch ' + action.type)
-  return;
-}
+import { addCharacterAction } from './state/characters/characterActions';
+import { defaultDispatch } from './utils/defaultDispatch';
+import { normalizeData } from './utils/normalizeData';
 
 export const StateContext = React.createContext(rootInitialState);
 export const DispatchContext = React.createContext(defaultDispatch);
 
 const App = () => {
   const [state, dispatch] = useReducer(rootReducer, rootInitialState);
+
+  useEffect(() => {
+    // import or create the initial user state here.
+    dispatch(addCharacterAction(UserData.characters[0]))
+  },[dispatch, addCharacterAction, UserData]);
+
   return (
     <DispatchContext.Provider value={dispatch}>
       <StateContext.Provider value={state}>
@@ -28,10 +30,6 @@ const App = () => {
           <CharacterSheet />
           <DebugComponent>
             {normalizeData(state)}
-          </DebugComponent>
-          <br/>
-          <DebugComponent>
-            {normalizeData(UserData)}
           </DebugComponent>
         </div>
       </StateContext.Provider>

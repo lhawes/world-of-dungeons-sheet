@@ -1,0 +1,1 @@
+export const normalizeData = (data: any) => JSON.stringify(data, null, 4);
