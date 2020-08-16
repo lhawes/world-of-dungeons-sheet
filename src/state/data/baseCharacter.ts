@@ -44,8 +44,7 @@ export const rawCharacterData: CharacterConfigType = {
   },],
   rawHirelings: [],
   level: 1,
-  maxHitPoints: 8,
-  currentHitPoints: 8,
+  currentHitPoints: 5,
   skills: {
     athletics: true,
     awareness: true,

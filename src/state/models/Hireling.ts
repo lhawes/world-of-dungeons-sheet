@@ -5,7 +5,6 @@ export interface Hireling {
   costPerDay: number,
   equipment: ItemInstance[],
   uuid: string, 
-  maxHitPoints: number,
   name: string,
   notes: string,
   skills: Skills,
