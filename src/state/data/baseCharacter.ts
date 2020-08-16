@@ -30,7 +30,6 @@ export const rawCharacterData: CharacterConfigType = {
     armor: null,
   }],
   rawHirelings: [],
-  hitDice: 1,
   level: 1,
   maxHitPoints: 8,
   currentHitPoints: 8,
