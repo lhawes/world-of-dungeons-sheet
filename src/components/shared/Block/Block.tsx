@@ -1,12 +1,13 @@
 import * as React from 'react';
+import { css } from 'emotion';
 
-const styling = {
-  display: 'inline-block',
-}
+const blockCss = css`
+  display: inline-block,
+`;
 
 export const Block: React.FC = ({ children }) => {
   return (
-    <div className={'Block'} style={styling}>
+    <div className={blockCss}>
       { children }
     </div>
   );
