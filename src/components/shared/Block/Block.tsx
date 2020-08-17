@@ -4,6 +4,7 @@ import { jsx } from '@emotion/core'
 import { useMemo } from 'react';
 
 const baseBlockCss = {
+  background: 'white',
 }
 
 export interface BlockProps {
