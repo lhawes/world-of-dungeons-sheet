@@ -17,7 +17,10 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "compilerOptions": {
+      "types": ["@emotion/core"]
+    }
   },
   "exclude": [
     "node_modules",
