@@ -34,12 +34,12 @@ export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
         <Block size={3} themedCss={whiteScoopBackground}>
           <CharacterClass />
         </Block>
-        <Block size={1} themedCss={whiteScoopBackground}>
+        <Block size={'50px'} themedCss={whiteScoopBackground}>
           <Level />
         </Block>
       </Section>
       <Section>
-        <Block size={1} themedCss={whiteScoopBackground}>
+        <Block size={2} themedCss={whiteScoopBackground}>
           <Attributes/>
         </Block>
         <Block size={1} themedCss={whiteScoopBackground}>
