@@ -7,7 +7,9 @@ import topRightSvg from '../../../static/svg/gray-top-right-scoop.svg';
 import bottomLeftSvg from '../../../static/svg/gray-bottom-left-scoop.svg';
 import bottomRightSvg from '../../../static/svg/gray-bottom-right-scoop.svg';
 
-
+// should extract this out of the Block component into it's own styled component 
+// since I want to have text / elements in a Block but outside the style
+// I also want to use Blocks to space but not have the scoop style at all.
 const backgroundWhite = 'white';
 const grayScoopSize = '10px';
 const grayScoopOffset = '10px';
