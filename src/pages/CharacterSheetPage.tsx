@@ -14,7 +14,6 @@ import { Notes } from '../components/characterSheet/Notes/Notes';
 import { Coin } from '../components/characterSheet/Coin/Coin';
 import { CharacterXp } from '../components/characterSheet/Xp/Xp';
 import { Advancement } from '../components/characterSheet/Advancement/Advancement';
-import { SheetController } from '../components/characterSheet/SheetController/SheetController';
 import { TotalArmor } from 'src/components/characterSheet/TotalArmor/TotalArmor';
 import { UnequippedEquipment } from 'src/components/characterSheet/UnequippedEquipment/UnequippedEquipment';
 import { Section } from 'src/components/shared/Section/Section';
@@ -37,9 +36,6 @@ export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
         </Block>
         <Block size={1} themedCss={whiteScoopBackground}>
           <Level />
-        </Block>
-        <Block size={2} themedCss={whiteScoopBackground}>
-          <SheetController />
         </Block>
       </Section>
       <Section>
