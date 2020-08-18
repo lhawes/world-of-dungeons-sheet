@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { css } from 'emotion';
-import * as topLeftSvg from '../../../svgs/top-left-scoop.svg';
-import * as topRightSvg from '../../../svgs/top-right-scoop.svg';
-import * as bottomLeftSvg from '../../../svgs/bottom-left-scoop.svg';
-import * as bottomRightSvg from '../../../svgs/bottom-right-scoop.svg';
+import topLeftSvg from '../../../static/svg/top-left-scoop.svg';
+import topRightSvg from '../../../static/svg/top-right-scoop.svg';
+import bottomLeftSvg from '../../../static/svg/bottom-left-scoop.svg';
+import bottomRightSvg from '../../../static/svg/bottom-right-scoop.svg';
 
 
 const sectionCss = css`
