@@ -4,12 +4,12 @@ import { HirelingInstance } from './Hireling';
 import { v4 as uuidv4 } from 'uuid';
 
 export enum CharacterClassType {
-  fighter = 'Fighter',
-  theif = 'Theif',
-  cleric = 'Cleric',
-  wizard = 'Wizard',
-  ranger = 'Ranger',
-  custom = 'Custom',
+  fighter = 'fighter',
+  theif = 'theif',
+  cleric = 'cleric',
+  wizard = 'wizard',
+  ranger = 'ranger',
+  custom = 'custom',
 }
 
 export enum Attribute {

@@ -4,7 +4,6 @@ import { StateContext } from 'src/App';
 import { getSelectedCharacterSkills } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { normalizeData } from 'src/utils/normalizeData';
-import { Block } from 'src/components/shared/Block/Block';
 
 export interface SkillsProps {
   [key: string]: any;
@@ -19,7 +18,7 @@ export const Skills: React.FC<SkillsProps> = ({}) => {
     return skills[skillKey];
   });
 
-  return (<Block>
+  return (<>
     Skills: { normalizeData(activeSkills) }
-  </Block>);
+  </>);
 }

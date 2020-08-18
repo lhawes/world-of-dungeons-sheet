@@ -5,7 +5,6 @@ import { getSelectedCharacterAllEquipment } from 'src/state/characters/character
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { ItemInstance } from 'src/state/models/Item';
 import { normalizeData } from 'src/utils/normalizeData';
-import { Block } from 'src/components/shared/Block/Block';
 
 export interface EquipmentProps {
   [key: string]: any;
@@ -18,7 +17,7 @@ export const PackEquipment: React.FC<EquipmentProps> = ({}) => {
   const equipmentNames = equipment.map((item: ItemInstance): { name: string } => {
     return { name: item.name };
   })
-  return (<Block>
+  return (<>
     Equipment: { normalizeData(equipmentNames) }
-  </Block>);
+  </>);
 }
