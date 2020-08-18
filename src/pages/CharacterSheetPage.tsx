@@ -18,16 +18,32 @@ import { SheetController } from '../components/characterSheet/SheetController/Sh
 import { TotalArmor } from 'src/components/characterSheet/TotalArmor/TotalArmor';
 import { UnequippedEquipment } from 'src/components/characterSheet/UnequippedEquipment/UnequippedEquipment';
 import { Section } from 'src/components/shared/Section/Section';
+import { Block } from 'src/components/shared/Block/Block';
 
 export interface CharacterSheetPageProps {
   [key: string]: any
 }
 
+// should probably extract the blocks out of the 'getter' components so that I can adjust the spacing easier.
+// Above is a lot better, need to extract out the styling from the Block to another component to separate
+// styling from structure from data
+
 export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
   return (
     <>
       <Section>
-      <CharacterName/><CharacterClass /><Level /><SheetController />
+        <Block cssOverrides={{ flex: 5 }}>
+          <CharacterName/>
+        </Block>
+        <Block cssOverrides={{ flex: 3 }}>
+          <CharacterClass />
+        </Block>
+        <Block cssOverrides={{ flex: 1 }}>
+          <Level />
+        </Block>
+        <Block cssOverrides={{ flex: 2 }}>
+          <SheetController />
+        </Block>
       </Section>
       <Section>
         <Attributes/><Skills /><Abilities />
