@@ -4,7 +4,7 @@ import { CharacterClass } from '../components/characterSheet/CharacterClass/Char
 import { Level } from '../components/characterSheet/Level/Level';
 import { Attributes } from '../components/characterSheet/Attributes/Attributes';
 import { Skills } from '../components/characterSheet/Skills/Skills';
-import { Abilities } from '../components/characterSheet/Abilities/Abilities';
+import { CharacterAbilities } from '../components/characterSheet/Abilities/Abilities';
 import { Weapons } from '../components/characterSheet/Weapons/Weapons';
 import { PackEquipment } from '../components/characterSheet/Equipment/Equipment';
 import { ArmorSpeed } from '../components/characterSheet/ArmorSpeed/ArmorSpeed';
@@ -46,7 +46,7 @@ export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
           <Skills />
         </Block>
         <Block size={1}>
-          <Abilities />
+          <CharacterAbilities />
         </Block>
       </Section>
       <Section>

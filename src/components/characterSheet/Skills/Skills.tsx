@@ -23,16 +23,28 @@ const inactiveSkillStyle = css`
   color: #c8c8c8;
 `;
 
+const skillListStyles = css`
+  background-color: white;
+  padding: 10px;
+  flex: 1
+`;
+
+const flexContainer = css`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 export const Skills: React.FC<SkillsProps> = ({}) => {
   const state = useContext(StateContext);
   const skills = useMemo(() => getSelectedCharacterSkills(state), [state[CharacterStateKey]]);
 
   return (
-    <div>
+    <div css={flexContainer}>
       <Block>
         Skills:
       </Block>
-      <Block>
+      <div css={skillListStyles}>
         {
           Object.keys(skills).map((skillKey: string) => {
             return (
@@ -42,7 +54,7 @@ export const Skills: React.FC<SkillsProps> = ({}) => {
             );
           })
         }
-      </Block>
+      </div>
     </div>
   );
 }

@@ -63,32 +63,39 @@ const attributeColumnStyle = css`
   flex: 1;
 `;
 
+const flexContainer = css`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 export const Attributes: React.FC<AttributesProps> = ({}) => {
   const state = useContext(StateContext);
   const attributes = useMemo(() => getSelectedCharacterAttributes(state), [state[CharacterStateKey]]);
 
-  return (<div>
-    <Block>
-      Attributes:
-    </Block>
-    <div css={attributeContainerStyle}>
-      <div css={attributeColumnStyle}>
-        {
-          attributes ? Object
-            .keys(PhysicalAttribute)
-            .map((attName) => <AttributeBlock key={attName} name={attName} score={attributes[attName]} />) 
-          : null
-        }
+  return (
+    <div css={flexContainer}>
+      <Block>
+        Attributes:
+      </Block>
+      <div css={attributeContainerStyle}>
+        <div css={attributeColumnStyle}>
+          {
+            attributes ? Object
+              .keys(PhysicalAttribute)
+              .map((attName) => <AttributeBlock key={attName} name={attName} score={attributes[attName]} />) 
+            : null
+          }
+        </div>
+        <div css={attributeColumnStyle}>
+          {
+            attributes 
+            ? Object
+              .keys(MentalAttribute)
+              .map((attName) => <AttributeBlock key={attName} name={attName} score={attributes[attName]} />) 
+            : null
+          }
+        </div>
       </div>
-      <div css={attributeColumnStyle}>
-        {
-          attributes 
-          ? Object
-            .keys(MentalAttribute)
-            .map((attName) => <AttributeBlock key={attName} name={attName} score={attributes[attName]} />) 
-          : null
-        }
-      </div>
-    </div>
-  </div>);
+    </div>);
 }
