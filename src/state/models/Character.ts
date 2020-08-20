@@ -12,13 +12,21 @@ export enum CharacterClassType {
   custom = 'custom',
 }
 
-export enum Attribute {
-  STR = 'STR',
-  DEX = 'DEX',
-  CON = 'CON',
+export enum MentalAttribute  {
   INT = 'INT',
   WIS = 'WIS',
   CHA = 'CHA'
+}
+
+export enum PhysicalAttribute {
+  STR = 'STR',
+  DEX = 'DEX',
+  CON = 'CON',
+}
+
+export const Attribute = {
+  ...PhysicalAttribute,
+  ...MentalAttribute
 }
 
 export type AttributeScoreRange = 0|1|2|3;
@@ -58,27 +66,47 @@ export interface CharacterSkills {
   [Skills.survival]: boolean,
 }
 
-export enum Abilities {
+export enum ClericAbilities {
   bless = 'bless',
   cure = 'cure',
   turn = 'turn',
   vision = 'vision',
+}
+
+export enum FighterAbilities {
   hardy = 'hardy',
   skirmish = 'skirmish',
   slay = 'slay',
   tough = 'tough',
+}
+
+export enum ThiefAbilities {
   backstab = 'backstab',
   lucky = 'lucky',
   reflexes = 'reflexes',
   tinker = 'tinker',
+}
+
+export enum WizardAbilities {
   cantrips = 'cantrips',
   command = 'command',
   ritual = 'ritual',
   summon = 'summon',
+}
+
+export enum RangerAbilities {
   pet = 'pet',
   scout = 'scout',
   volley = 'volley',
   wild = 'wild',
+}
+
+export const Abilities = {
+  ...ClericAbilities,
+  ...FighterAbilities,
+  ...ThiefAbilities,
+  ...WizardAbilities,
+  ...RangerAbilities,
 }
 
 export interface CharacterAbilities {

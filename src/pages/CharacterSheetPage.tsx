@@ -39,13 +39,13 @@ export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
         </Block>
       </Section>
       <Section>
-        <Block size={2} themedCss={whiteScoopBackground}>
+        <Block size={2}>
           <Attributes/>
         </Block>
-        <Block size={1} themedCss={whiteScoopBackground}>
+        <Block size={1}>
           <Skills />
         </Block>
-        <Block size={1} themedCss={whiteScoopBackground}>
+        <Block size={1}>
           <Abilities />
         </Block>
       </Section>
@@ -60,6 +60,9 @@ export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
       <Section>
         <Block size={1} themedCss={whiteScoopBackground}>
           <ArmorSpeed />
+        </Block>
+        <Block size={1} themedCss={whiteScoopBackground}>
+          <TotalArmor />
         </Block>
         <Block size={1} themedCss={whiteScoopBackground}>
           <HitDice />
@@ -85,9 +88,6 @@ export const CharacterSheetPage = ({}: CharacterSheetPageProps) => {
         </Block>
       </Section>
       <Section>
-        <Block size={1} themedCss={whiteScoopBackground}>
-          <TotalArmor />
-        </Block>
         <Block size={1} themedCss={whiteScoopBackground}>
           <UnequippedEquipment />
         </Block>

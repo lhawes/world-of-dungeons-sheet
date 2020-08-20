@@ -16,7 +16,7 @@ export const CharacterName: React.FC<CharacterNameProps> = ({}) => {
   return (
     <>
       <Block size={1}>
-        CharacterName:
+        Character Name:
       </Block>
       <Block size={'auto' }>
         {characterName}
