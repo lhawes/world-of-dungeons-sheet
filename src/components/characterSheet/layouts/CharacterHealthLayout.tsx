@@ -29,24 +29,24 @@ const CharacterHitPointsLayout = css({
   gridRow: 1,
 }, whiteScoopBackground);
 
-const GridLayout = css({
+const gridLayout = css({
   gridTemplateColumns: `4fr ${whiteScoopOffset} 1fr ${whiteScoopOffset} 1fr ${whiteScoopOffset} 1fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
 
 export const CharacterHealthLayout: React.FC = () => {
   return (
-    <Section layout={GridLayout}>
-      <Block size={1} themedCss={CharacterArmorSpeedLayout}>
+    <Section layout={gridLayout}>
+      <Block themedCss={CharacterArmorSpeedLayout}>
         <ArmorSpeed />
       </Block>
-      <Block size={1} themedCss={CharacterTotalArmorLayout}>
+      <Block themedCss={CharacterTotalArmorLayout}>
         <TotalArmor />
       </Block>
-      <Block size={1} themedCss={CharacterHitDiceLayout}>
+      <Block themedCss={CharacterHitDiceLayout}>
         <HitDice />
       </Block>
-      <Block size={1} themedCss={CharacterHitPointsLayout}>
+      <Block themedCss={CharacterHitPointsLayout}>
         <HitPoints />
       </Block>
     </Section>

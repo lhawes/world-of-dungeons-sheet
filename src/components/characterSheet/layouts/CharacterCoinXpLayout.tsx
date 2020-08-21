@@ -23,21 +23,21 @@ const CharacterAdvancementLayout = css({
   gridRow: 1,
 }, whiteScoopBackground);
 
-const GridLayout = css({
+const gridLayout = css({
   gridTemplateColumns: `3fr ${whiteScoopOffset} 2fr ${whiteScoopOffset} 2fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
 
 export const CharacterCoinXpLayout: React.FC = () => {
   return (
-    <Section layout={GridLayout}>
-      <Block size={1} themedCss={CharacterCoinLayout}>
+    <Section layout={gridLayout}>
+      <Block themedCss={CharacterCoinLayout}>
         <Coin />
       </Block>
-      <Block size={1} themedCss={CharacterXpLayout}>
+      <Block themedCss={CharacterXpLayout}>
         <CharacterXp />
       </Block>
-      <Block size={1} themedCss={CharacterAdvancementLayout}>
+      <Block themedCss={CharacterAdvancementLayout}>
         <Advancement />
       </Block>
     </Section>

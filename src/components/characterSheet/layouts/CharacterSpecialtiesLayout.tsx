@@ -6,7 +6,7 @@ import { Section } from 'src/components/shared/Section/Section';
 import * as React from 'react';
 import { Block } from 'src/components/shared/Block/Block';
 import { Attributes } from '../Attributes/Attributes';
-import { CharacterAbilities } from '../Abilities/Abilities';
+import { CharacterAbilities } from '../CharacterAbilities/CharacterAbilities';
 import { CharacterSkills } from '../CharacterSkills/CharacterSkills';
 
 const CharacterAttributesLayout = css({
@@ -24,7 +24,7 @@ const CharacterAbilitiesLayout = css({
   gridRow: 1,
 }, whiteScoopBackground);
 
-const GridLayout = css({
+const gridLayout = css({
   gridTemplateColumns: `3fr ${whiteScoopOffset} 1fr ${whiteScoopOffset} 2fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
@@ -32,7 +32,7 @@ const GridLayout = css({
 export const CharacterSpecialtiesLayout: React.FC = () => {
 
   return (
-    <Section layout={GridLayout}>
+    <Section layout={gridLayout}>
       <Block themedCss={CharacterAttributesLayout}>
         <Attributes/>
       </Block>

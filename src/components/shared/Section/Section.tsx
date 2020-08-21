@@ -17,7 +17,8 @@ export const Section: React.FC<SectionProps> = ({ children, layout }) => {
       ${sectionCss}
       ${layout}
     `
-  },[layout, sectionCss])
+  },[layout]);
+
   return (
     <section css={computedCss}>
       { children }

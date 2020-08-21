@@ -11,14 +11,14 @@ const CharacterUnequippedLayout = css({
   gridRow: 1,
 }, whiteScoopBackground);
 
-const GridLayout = css({
+const gridLayout = css({
   gridTemplateColumns: `1fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
 
 export const CharacterUnequippedEquipmentLayout: React.FC = () => {
   return (
-    <Section layout={GridLayout}>
+    <Section layout={gridLayout}>
       <Block themedCss={CharacterUnequippedLayout}>
         <UnequippedEquipment />
       </Block>

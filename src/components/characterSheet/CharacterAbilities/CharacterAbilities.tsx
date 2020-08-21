@@ -6,21 +6,11 @@ import { useContext, useMemo } from 'react';
 import { getSelectedCharacterAbilities } from 'src/state/characters/characterSelectors';
 import { Block } from 'src/components/shared/Block/Block';
 import { ClericAbilities, FighterAbilities, ThiefAbilities, WizardAbilities, RangerAbilities, Abilities } from 'src/state/models/Character';
-import { FlexContainer } from 'src/components/shared/FlexContainer/FlexContainer';
+import { SubLayout } from 'src/components/shared/SubLayout/SubLayout';
 
 export interface AbilitiesProps {
   [key: string]: any;
 }
-
-const attributeContainerStyle = css`
-  display: flex;
-  flex-direction: row wrap;
-  background-color: #fff;
-`;
-
-const attributeColumnStyle = css`
-  flex: 1;
-`;
 
 const allClassAbilites = [
   ClericAbilities,
@@ -45,16 +35,20 @@ const ClassAbilityItem = css`
 
 `;
 
-const ClassAbilityContainer = css`
+const classAbilityContainer = css`
   :not(:last-child) {
     border-bottom: 1px solid black;
   }
 `;
 
-const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
+const gridLayout = css({
+  gridTemplateColumns: `1fr`,
+  gridTemplateRows: '1fr 1fr 1fr 1fr 1fr',
+});
 
+const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
   return (
-    <Block themedCss={ClassAbilityContainer}>
+    <Block themedCss={classAbilityContainer}>
       { 
         abilityList.map((ability) => {
           return (<div key={ability.name} css={ClassAbilityItem}>{ ability.name }</div>);
@@ -64,35 +58,26 @@ const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) =>
   )
 }
 
-const abilityContainerStyles = css`
-  flex-direction: column;
-`;
-
 export const CharacterAbilities: React.FC<AbilitiesProps> = ({}) => {
   const state = useContext(StateContext);
   const specialAbilities = useMemo(() => getSelectedCharacterAbilities(state), [state[CharacterStateKey]]);
 
   return (
-    <FlexContainer themedCss={abilityContainerStyles}>
+    <SubLayout layout={gridLayout}>
       <Block>Special Abilities:</Block>
-      <Block themedCss={attributeContainerStyle}>
-        <div css={attributeColumnStyle}>
-              {
-                specialAbilities ? 
-                allClassAbilites.map((classAbilities, i) => {
-                  const formattedAbilities = Object.keys(classAbilities).reduce((acc: ClassAbility[], abilityKey: Abilities) => {
-                    acc.push({ name: abilityKey, active: specialAbilities[abilityKey]});
-                    return acc;
-                  }, []);
-                  
-                  return (
-                    <ClassAbilityBlock key={i} abilityList={formattedAbilities} />
-                  );
-                })
-                : null
-              }
-            </div>
-
-        </Block>
-    </FlexContainer>);
+        {
+          specialAbilities ? 
+          allClassAbilites.map((classAbilities, i) => {
+            const formattedAbilities = Object.keys(classAbilities).reduce((acc: ClassAbility[], abilityKey: Abilities) => {
+              acc.push({ name: abilityKey, active: specialAbilities[abilityKey]});
+              return acc;
+            }, []);
+            
+            return (
+              <ClassAbilityBlock key={i} abilityList={formattedAbilities} />
+            );
+          })
+          : null
+        }
+    </SubLayout>);
 }

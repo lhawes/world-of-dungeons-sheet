@@ -15,10 +15,10 @@ export const CharacterName: React.FC<CharacterNameProps> = ({}) => {
 
   return (
     <>
-      <Block size={1}>
+      <Block>
         Character Name:
       </Block>
-      <Block size={'auto' }>
+      <Block>
         {characterName}
       </Block>
       </>

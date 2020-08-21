@@ -7,7 +7,6 @@ const baseBlockCss = css`
 `;
 
 export interface BlockProps {
-  size?: number | string;
   themedCss?: any;
 }
 

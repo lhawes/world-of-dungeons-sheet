@@ -17,20 +17,20 @@ const CharacterPackLayout = css({
   gridRow: 1,
 }, whiteScoopBackground);
 
-const GridLayout = css({
+const gridLayout = css({
   gridTemplateColumns: `5fr ${whiteScoopOffset} 2fr ${whiteScoopOffset} 3fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
 
 export const CharacterEquipmentLayout: React.FC = () => {
   return (
-    <Section layout={GridLayout}>
-    <Block size={1} themedCss={CharacterWeaponsLayout}>
-      <Weapons />
-    </Block>
-    <Block size={1} themedCss={CharacterPackLayout}>
-      <PackEquipment />
-    </Block>
-  </Section>
+    <Section layout={gridLayout}>
+      <Block themedCss={CharacterWeaponsLayout}>
+        <Weapons />
+      </Block>
+      <Block themedCss={CharacterPackLayout}>
+        <PackEquipment />
+      </Block>
+    </Section>
   );
 }

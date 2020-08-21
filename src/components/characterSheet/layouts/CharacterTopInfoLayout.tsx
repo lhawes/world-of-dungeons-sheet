@@ -23,14 +23,14 @@ const CharacterLevelLayout = css({
   gridRow: 1,
 }, whiteScoopBackground);
 
-const GridLayout = css({
+const gridLayout = css({
   gridTemplateColumns: `5fr ${whiteScoopOffset} 3fr ${whiteScoopOffset} 1fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
 
 export const CharacterTopInfoLayout: React.FC = () => {
   return (
-    <Section layout={GridLayout}>
+    <Section layout={gridLayout}>
       <Block themedCss={CharacterNameLayout}>
         <CharacterName/>
       </Block>
