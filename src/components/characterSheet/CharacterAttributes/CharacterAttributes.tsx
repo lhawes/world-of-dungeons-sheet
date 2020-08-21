@@ -69,7 +69,7 @@ const flexContainer = css`
   height: 100%;
 `;
 
-export const Attributes: React.FC<AttributesProps> = ({}) => {
+export const CharacterAttributes: React.FC<AttributesProps> = ({}) => {
   const state = useContext(StateContext);
   const attributes = useMemo(() => getSelectedCharacterAttributes(state), [state[CharacterStateKey]]);
 

@@ -5,7 +5,7 @@ import { whiteScoopOffset, grayScoopBackground } from 'src/sharedStyles/grayScoo
 import { Section } from 'src/components/shared/Section/Section';
 import * as React from 'react';
 import { Block } from 'src/components/shared/Block/Block';
-import { Attributes } from '../Attributes/Attributes';
+import { CharacterAttributes } from '../CharacterAttributes/CharacterAttributes';
 import { CharacterAbilities } from '../CharacterAbilities/CharacterAbilities';
 import { CharacterSkills } from '../CharacterSkills/CharacterSkills';
 
@@ -34,7 +34,7 @@ export const CharacterSpecialtiesLayout: React.FC = () => {
   return (
     <Section layout={gridLayout}>
       <Block themedCss={CharacterAttributesLayout}>
-        <Attributes/>
+        <CharacterAttributes/>
       </Block>
       <Block themedCss={CharacterSkillsLayout}>
         <CharacterSkills />
