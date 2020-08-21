@@ -6,6 +6,7 @@ import { useContext, useMemo } from 'react';
 import { getSelectedCharacterAbilities } from 'src/state/characters/characterSelectors';
 import { Block } from 'src/components/shared/Block/Block';
 import { ClericAbilities, FighterAbilities, ThiefAbilities, WizardAbilities, RangerAbilities, Abilities } from 'src/state/models/Character';
+import { FlexContainer } from 'src/components/shared/FlexContainer/FlexContainer';
 
 export interface AbilitiesProps {
   [key: string]: any;
@@ -38,27 +39,43 @@ interface ClassAbilityBlockProps {
   abilityList: ClassAbility[]
 }
 
+const ClassAbilityItem = css`
+  display: inline-block;
+  margin: 0 2rem;
+
+`;
+
+const ClassAbilityContainer = css`
+  :not(:last-child) {
+    border-bottom: 1px solid black;
+  }
+`;
+
 const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
 
   return (
-    <div>
+    <Block themedCss={ClassAbilityContainer}>
       { 
         abilityList.map((ability) => {
-          return (<div key={ability.name}   >{ ability.name }</div>);
+          return (<div key={ability.name} css={ClassAbilityItem}>{ ability.name }</div>);
         }) 
       }
-    </div>
+    </Block>
   )
 }
+
+const abilityContainerStyles = css`
+  flex-direction: column;
+`;
 
 export const CharacterAbilities: React.FC<AbilitiesProps> = ({}) => {
   const state = useContext(StateContext);
   const specialAbilities = useMemo(() => getSelectedCharacterAbilities(state), [state[CharacterStateKey]]);
 
   return (
-    <div>
+    <FlexContainer themedCss={abilityContainerStyles}>
       <Block>Special Abilities:</Block>
-      <div css={attributeContainerStyle}>
+      <Block themedCss={attributeContainerStyle}>
         <div css={attributeColumnStyle}>
               {
                 specialAbilities ? 
@@ -76,6 +93,6 @@ export const CharacterAbilities: React.FC<AbilitiesProps> = ({}) => {
               }
             </div>
 
-        </div>
-    </div>);
+        </Block>
+    </FlexContainer>);
 }

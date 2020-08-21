@@ -22,7 +22,7 @@ export const Block: React.FC<BlockProps> = ({ children, size = sizeDefault, them
       ${themedCss}
       flex: ${size};
     `
-  },[size])
+  },[size, themedCss])
 
   return (
     <div css={computedCss}>
