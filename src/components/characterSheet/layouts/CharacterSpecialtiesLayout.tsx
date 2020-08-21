@@ -25,7 +25,7 @@ const CharacterAbilitiesLayout = css({
 }, whiteScoopBackground);
 
 const GridLayout = css({
-  gridTemplateColumns: `5fr ${whiteScoopOffset} 2fr ${whiteScoopOffset} 3fr`,
+  gridTemplateColumns: `3fr ${whiteScoopOffset} 1fr ${whiteScoopOffset} 2fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
 
