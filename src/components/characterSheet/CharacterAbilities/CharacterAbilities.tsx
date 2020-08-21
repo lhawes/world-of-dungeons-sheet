@@ -4,7 +4,6 @@ import { StateContext } from 'src/App';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { useContext, useMemo } from 'react';
 import { getSelectedCharacterAbilities } from 'src/state/characters/characterSelectors';
-import { Block } from 'src/components/shared/Block/Block';
 import { ClericAbilities, FighterAbilities, ThiefAbilities, WizardAbilities, RangerAbilities, Abilities } from 'src/state/models/Character';
 import { SubLayout } from 'src/components/shared/SubLayout/SubLayout';
 
@@ -25,12 +24,12 @@ interface ClassAbility {
   active: boolean,
 }
 
-interface ClassAbilityBlockProps {
+interface ClassAbilitydivProps {
   abilityList: ClassAbility[]
 }
 
 const ClassAbilityItem = css`
-  display: inline-block;
+  display: inline-div;
   margin: 0 2rem;
 
 `;
@@ -46,15 +45,15 @@ const gridLayout = css({
   gridTemplateRows: '1fr 1fr 1fr 1fr 1fr',
 });
 
-const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
+const ClassAbilitydiv: React.FC<ClassAbilitydivProps> = ({ abilityList }) => {
   return (
-    <Block themedCss={classAbilityContainer}>
+    <div css={classAbilityContainer}>
       { 
         abilityList.map((ability) => {
           return (<div key={ability.name} css={ClassAbilityItem}>{ ability.name }</div>);
         }) 
       }
-    </Block>
+    </div>
   )
 }
 
@@ -64,7 +63,7 @@ export const CharacterAbilities: React.FC<AbilitiesProps> = ({}) => {
 
   return (
     <SubLayout layout={gridLayout}>
-      <Block>Special Abilities:</Block>
+      <div>Special Abilities:</div>
         {
           specialAbilities ? 
           allClassAbilites.map((classAbilities, i) => {
@@ -74,7 +73,7 @@ export const CharacterAbilities: React.FC<AbilitiesProps> = ({}) => {
             }, []);
             
             return (
-              <ClassAbilityBlock key={i} abilityList={formattedAbilities} />
+              <ClassAbilitydiv key={i} abilityList={formattedAbilities} />
             );
           })
           : null

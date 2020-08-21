@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core'
 import { whiteScoopBackground } from 'src/sharedStyles/whiteScoopTheme';
 import { grayScoopBackground } from 'src/sharedStyles/grayScoopTheme';
 import { Section } from 'src/components/shared/Section/Section';
-import { Block } from 'src/components/shared/Block/Block';
+
 import { Notes } from '../Notes/Notes';
 
 const CharacterNoteLayout = css({
@@ -19,9 +19,9 @@ const gridLayout = css({
 export const CharacterNotesLayout: React.FC = () => {
   return (
     <Section layout={gridLayout}>
-      <Block themedCss={CharacterNoteLayout}>
+      <div css={CharacterNoteLayout}>
         <Notes />
-      </Block>
+      </div>
     </Section>
   );
 }

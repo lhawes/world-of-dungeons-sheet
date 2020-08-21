@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core'
 import { whiteScoopBackground } from 'src/sharedStyles/whiteScoopTheme';
 import { whiteScoopOffset, grayScoopBackground } from 'src/sharedStyles/grayScoopTheme';
 import { Section } from 'src/components/shared/Section/Section';
-import { Block } from 'src/components/shared/Block/Block';
+
 import { CharacterName } from '../CharacterName/CharacterName';
 import { CharacterClass } from '../CharacterClass/CharacterClass';
 import { Level } from '../Level/Level';
@@ -31,15 +31,15 @@ const gridLayout = css({
 export const CharacterTopInfoLayout: React.FC = () => {
   return (
     <Section layout={gridLayout}>
-      <Block themedCss={CharacterNameLayout}>
+      <div css={CharacterNameLayout}>
         <CharacterName/>
-      </Block>
-      <Block themedCss={CharacterClassLayout}>
+      </div>
+      <div css={CharacterClassLayout}>
         <CharacterClass />
-      </Block>
-      <Block themedCss={CharacterLevelLayout}>
+      </div>
+      <div css={CharacterLevelLayout}>
         <Level />
-      </Block>
+      </div>
     </Section>
   );
 }

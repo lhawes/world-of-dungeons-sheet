@@ -4,7 +4,6 @@ import { useMemo, useContext } from 'react';
 import { StateContext } from 'src/App';
 import { getSelectedCharacterAttributes } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
-import { Block } from 'src/components/shared/Block/Block';
 import { AttributeScoreRange, PhysicalAttribute } from 'src/state/models/Character';
 import { MentalAttribute } from '../../../state/models/Character';
 
@@ -75,9 +74,9 @@ export const CharacterAttributes: React.FC<AttributesProps> = ({}) => {
 
   return (
     <div css={flexContainer}>
-      <Block>
+      <div>
         Attributes:
-      </Block>
+      </div>
       <div css={attributeContainerStyle}>
         <div css={attributeColumnStyle}>
           {

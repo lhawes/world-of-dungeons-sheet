@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core';
 import { whiteScoopBackground } from 'src/sharedStyles/whiteScoopTheme';
 import { whiteScoopOffset, grayScoopBackground } from 'src/sharedStyles/grayScoopTheme';
 import { Section } from 'src/components/shared/Section/Section';
-import { Block } from 'src/components/shared/Block/Block';
+
 import { ArmorSpeed } from '../ArmorSpeed/ArmorSpeed';
 import { TotalArmor } from '../TotalArmor/TotalArmor';
 import { HitDice } from '../HitDice/HitDice';
@@ -37,18 +37,18 @@ const gridLayout = css({
 export const CharacterHealthLayout: React.FC = () => {
   return (
     <Section layout={gridLayout}>
-      <Block themedCss={CharacterArmorSpeedLayout}>
+      <div css={CharacterArmorSpeedLayout}>
         <ArmorSpeed />
-      </Block>
-      <Block themedCss={CharacterTotalArmorLayout}>
+      </div>
+      <div css={CharacterTotalArmorLayout}>
         <TotalArmor />
-      </Block>
-      <Block themedCss={CharacterHitDiceLayout}>
+      </div>
+      <div css={CharacterHitDiceLayout}>
         <HitDice />
-      </Block>
-      <Block themedCss={CharacterHitPointsLayout}>
+      </div>
+      <div css={CharacterHitPointsLayout}>
         <HitPoints />
-      </Block>
+      </div>
     </Section>
   );
 }

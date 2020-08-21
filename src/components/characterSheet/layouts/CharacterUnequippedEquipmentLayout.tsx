@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core'
 import { whiteScoopBackground } from 'src/sharedStyles/whiteScoopTheme';
 import { grayScoopBackground } from 'src/sharedStyles/grayScoopTheme';
 import { Section } from 'src/components/shared/Section/Section';
-import { Block } from 'src/components/shared/Block/Block';
+
 import { UnequippedEquipment } from '../UnequippedEquipment/UnequippedEquipment';
 
 const CharacterUnequippedLayout = css({
@@ -19,9 +19,9 @@ const gridLayout = css({
 export const CharacterUnequippedEquipmentLayout: React.FC = () => {
   return (
     <Section layout={gridLayout}>
-      <Block themedCss={CharacterUnequippedLayout}>
+      <div css={CharacterUnequippedLayout}>
         <UnequippedEquipment />
-      </Block>
+      </div>
     </Section>
   );
 }

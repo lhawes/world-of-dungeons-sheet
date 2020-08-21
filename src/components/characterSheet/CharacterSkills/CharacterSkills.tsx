@@ -4,7 +4,7 @@ import { useContext, useMemo } from 'react';
 import { StateContext } from 'src/App';
 import { getSelectedCharacterSkills } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
-import { Block } from 'src/components/shared/Block/Block';
+
 
 export interface SkillsProps {
   [key: string]: any;
@@ -41,9 +41,9 @@ export const CharacterSkills: React.FC<SkillsProps> = ({}) => {
 
   return (
     <div css={flexContainer}>
-      <Block>
+      <div>
         Skills:
-      </Block>
+      </div>
       <div css={skillListStyles}>
         {
           Object.keys(skills).map((skillKey: string) => {
