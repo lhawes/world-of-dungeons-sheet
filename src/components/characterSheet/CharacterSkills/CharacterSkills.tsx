@@ -35,7 +35,7 @@ const flexContainer = css`
   height: 100%;
 `;
 
-export const Skills: React.FC<SkillsProps> = ({}) => {
+export const CharacterSkills: React.FC<SkillsProps> = ({}) => {
   const state = useContext(StateContext);
   const skills = useMemo(() => getSelectedCharacterSkills(state), [state[CharacterStateKey]]);
 

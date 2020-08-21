@@ -8,11 +8,11 @@ export const backgroundGray = '#c8c8c8';
 export const whiteScoopSize = '10px';
 export const whiteScoopOffset = '7px';
 
-export const grayScoopBackground = css`
-  background-image: url(${topLeftSvg}), url(${topRightSvg}), url(${bottomLeftSvg}), url(${bottomRightSvg});
-  background-color: ${backgroundGray};
-  background-size: ${whiteScoopSize} ${whiteScoopSize};
-  background-repeat: no-repeat;
-  background-position: 0 0, 100% 0, 0 100%, 100% 100%;
-  padding: ${whiteScoopOffset};
-`;
+export const grayScoopBackground = css({
+  backgroundImage: `url(${topLeftSvg}), url(${topRightSvg}), url(${bottomLeftSvg}), url(${bottomRightSvg})`,
+  backgroundColor: `${backgroundGray}`,
+  backgroundSize: `${whiteScoopSize} ${whiteScoopSize}`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: '0 0, 100% 0, 0 100%, 100% 100%',
+  padding: `${whiteScoopOffset}`,
+});

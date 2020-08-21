@@ -1,19 +1,25 @@
-import * as React from 'react';
-import { css } from 'emotion';
-import { grayScoopBackground } from 'src/sharedStyles/grayScoopTheme';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
+import { useMemo } from 'react';
 
-const sectionCss = css`
-  ${grayScoopBackground}
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  
-`;
+const sectionCss = css([
+  {
+    display: 'grid',
+}])
 
-export const Section: React.FC = ({ children }) => {
+interface SectionProps {
+  layout?: any
+}
+
+export const Section: React.FC<SectionProps> = ({ children, layout }) => {
+  const computedCss = useMemo(() => {
+    return css`
+      ${sectionCss}
+      ${layout}
+    `
+  },[layout, sectionCss])
   return (
-    <section className={sectionCss}>
+    <section css={computedCss}>
       { children }
     </section>
   );

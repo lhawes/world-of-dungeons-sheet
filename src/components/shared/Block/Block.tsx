@@ -3,9 +3,7 @@ import { jsx, css } from '@emotion/core'
 import { useMemo } from 'react';
 
 const baseBlockCss = css`
-  :not(:last-child) {
-    margin-right: 7px;
-  }
+
 `;
 
 export interface BlockProps {
@@ -15,14 +13,13 @@ export interface BlockProps {
 
 export const sizeDefault = 1;
 
-export const Block: React.FC<BlockProps> = ({ children, size = sizeDefault, themedCss }) => {
+export const Block: React.FC<BlockProps> = ({ children, themedCss }) => {
   const computedCss = useMemo(() => {
     return css`
       ${baseBlockCss}
       ${themedCss}
-      flex: ${size};
     `
-  },[size, themedCss])
+  },[themedCss])
 
   return (
     <div css={computedCss}>
