@@ -4,7 +4,7 @@ import { StateContext, DispatchContext } from 'src/App';
 import { getSelectedCharacterNotes } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { setCharacterNotesAction } from 'src/state/characters/characterActions';
-import { SimpleTextArea } from 'src/components/shared/SimpleInput/SimpleInput';
+import { SimpleTextArea } from 'src/components/shared/SimpleTextArea/SimpleTextArea';
 
 export interface NotesProps {
   [key: string]: any;

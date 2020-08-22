@@ -18,7 +18,7 @@ const CharacterPackLayout = css({
 }, whiteScoopBackground);
 
 const gridLayout = css({
-  gridTemplateColumns: `5fr ${whiteScoopOffset} 2fr ${whiteScoopOffset} 3fr`,
+  gridTemplateColumns: `2fr ${whiteScoopOffset} 3fr`,
   gridTemplateRows: '1fr',
 }, grayScoopBackground);
 
