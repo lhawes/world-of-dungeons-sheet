@@ -24,33 +24,38 @@ interface ClassAbility {
   active: boolean,
 }
 
-interface ClassAbilitydivProps {
+interface ClassAbilityBlockProps {
   abilityList: ClassAbility[]
 }
 
-const ClassAbilityItem = css`
-  display: inline-div;
-  margin: 0 2rem;
+const ClassAbilityItem = css({
+  display: 'inline-div',
+  margin: '0 2rem',
+  color: '#c8c8c8',
+})
 
-`;
+const activeClassAbilityItem = css({
+  color: 'black',
+});
 
-const classAbilityContainer = css`
-  :not(:last-child) {
-    border-bottom: 1px solid black;
+const classAbilityContainer = css({
+  ':not(:last-child)': {
+    borderBottom: '1px solid black',
   }
-`;
+})
 
 const gridLayout = css({
   gridTemplateColumns: `1fr`,
   gridTemplateRows: '1fr 1fr 1fr 1fr 1fr',
 });
 
-const ClassAbilitydiv: React.FC<ClassAbilitydivProps> = ({ abilityList }) => {
+const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
   return (
     <div css={classAbilityContainer}>
       { 
         abilityList.map((ability) => {
-          return (<div key={ability.name} css={ClassAbilityItem}>{ ability.name }</div>);
+          const activeStyle = ability.active ? activeClassAbilityItem : {};
+          return (<div key={ability.name} css={[ClassAbilityItem, activeStyle]}>{ ability.name }</div>);
         }) 
       }
     </div>
@@ -73,7 +78,7 @@ export const CharacterAbilities: React.FC<AbilitiesProps> = ({}) => {
             }, []);
             
             return (
-              <ClassAbilitydiv key={i} abilityList={formattedAbilities} />
+              <ClassAbilityBlock key={i} abilityList={formattedAbilities} />
             );
           })
           : null
