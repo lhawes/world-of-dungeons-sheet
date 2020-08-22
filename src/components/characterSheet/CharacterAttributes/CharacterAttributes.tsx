@@ -44,6 +44,8 @@ const AttributeBlock: React.FC<AttributeBlockProps> = ({ name, score }) => {
     <div css={attributeBox}>
       <div css={attributeScoreStyle}>
         { score }
+        
+
       </div>
       <div css={attributeNameStyle}>
         { name }
