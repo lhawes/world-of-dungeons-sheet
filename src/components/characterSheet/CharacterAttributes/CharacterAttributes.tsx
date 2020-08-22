@@ -7,44 +7,38 @@ import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { AttributeScoreRange, PhysicalAttribute } from 'src/state/models/Character';
 import { MentalAttribute } from '../../../state/models/Character';
 
-export interface AttributesProps {
-  [key: string]: any;
-}
-
 interface AttributeBlockProps {
   name: string,
   score: AttributeScoreRange
 }
 
-const attributeNameStyle = css`
-  display: inline-block;
-  font-size: 45px;
-  padding: 4px;
-`;
+const attributeNameStyle = css({
+  display: 'inline-block',
+  fontSize: '45px',
+  padding: '4px',
+});
 
 const scoreBoxLength = '3.5rem';
 
-const attributeScoreStyle = css`
-  display: inline-block;
-  font-size: 25px;
-  padding: 4px;
-  border: 1px solid black;
-  height: ${scoreBoxLength};
-  width: ${scoreBoxLength};
-  text-align: center;
-  line-height: ${scoreBoxLength};
-`;
+const attributeScoreStyle = css({
+  display: 'inline-block',
+  fontSize: '25px',
+  padding: '4px',
+  border: '1px solid black',
+  height: `${scoreBoxLength}`,
+  width: `${scoreBoxLength}`,
+  textAlign: 'center',
+  lineHeight: `${scoreBoxLength}`,
+});
 
-const attributeBox = css`
-
-`;
+const attributeBox = css({});
 
 const AttributeBlock: React.FC<AttributeBlockProps> = ({ name, score }) => {
   return (
     <div css={attributeBox}>
       <div css={attributeScoreStyle}>
         { score }
-        
+
 
       </div>
       <div css={attributeNameStyle}>
@@ -54,23 +48,23 @@ const AttributeBlock: React.FC<AttributeBlockProps> = ({ name, score }) => {
   );
 }
 
-const attributeContainerStyle = css`
-  display: flex;
-  flex-direction: row wrap;
-  background-color: #fff;
-`;
+const attributeContainerStyle = css({
+  display: 'flex',
+  'flex-direction': 'row wrap',
+  backgroundColor: '#fff',
+});
 
-const attributeColumnStyle = css`
-  flex: 1;
-`;
+const attributeColumnStyle = css({
+  flex: 1,
+})
 
-const flexContainer = css`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`;
+const flexContainer = css({
+  display: 'flex',
+  'flex-direction': 'column',
+  height: '100%',
+});
 
-export const CharacterAttributes: React.FC<AttributesProps> = ({}) => {
+export const CharacterAttributes: React.FC = () => {
   const state = useContext(StateContext);
   const attributes = useMemo(() => getSelectedCharacterAttributes(state), [state[CharacterStateKey]]);
 
