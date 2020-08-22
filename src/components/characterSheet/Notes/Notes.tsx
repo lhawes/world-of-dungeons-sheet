@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { useContext, useMemo } from 'react';
-import { StateContext } from 'src/App';
+import { StateContext, DispatchContext } from 'src/App';
 import { getSelectedCharacterNotes } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
+import { setCharacterNotesAction } from 'src/state/characters/characterActions';
+import { SimpleTextArea } from 'src/components/shared/SimpleInput/SimpleInput';
 
 export interface NotesProps {
   [key: string]: any;
@@ -10,9 +12,29 @@ export interface NotesProps {
 
 export const Notes: React.FC<NotesProps> = ({}) => {
   const state = useContext(StateContext);
-  const notes = useMemo(() => getSelectedCharacterNotes(state), [state[CharacterStateKey]]);
+  const characterNotes = useMemo(() => getSelectedCharacterNotes(state), [state[CharacterStateKey]]);
+
+  const dispatch = useContext(DispatchContext);
+  const setCharacterNotes = React.useCallback((notes: string) => dispatch(setCharacterNotesAction(notes)), [setCharacterNotesAction, dispatch]);
+
+  const notesValidator = React.useCallback((v: string) => {
+     return v.length < 500;
+  }, []);
+
+
 
   return (<>
-    Notes: "{notes}"
+      <div>
+        Character Name
+      </div>
+      <div>
+        { <SimpleTextArea
+            fieldName={'notes'}
+            value={characterNotes}
+            defaultValue={''}
+            validator={notesValidator}
+            onChange={setCharacterNotes}
+        /> }
+      </div>
   </>);
 }

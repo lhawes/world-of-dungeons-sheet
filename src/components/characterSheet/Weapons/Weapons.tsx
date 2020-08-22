@@ -4,7 +4,7 @@ import { StateContext } from 'src/App';
 import { getSelectedCharacterWeapons } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { ItemInstance } from 'src/state/models/Item';
-import { normalizeData } from 'src/utils/normalizeData';
+import { normalizeData } from 'src/utils/normalizers';
 
 export interface WeaponsProps {
   [key: string]: any;

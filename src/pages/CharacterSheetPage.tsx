@@ -5,6 +5,7 @@ import { CharacterHealthLayout } from 'src/components/characterSheet/layouts/Cha
 import { CharacterNotesLayout } from 'src/components/characterSheet/layouts/CharacterNotesLayout';
 import { CharacterCoinXpLayout } from 'src/components/characterSheet/layouts/CharacterCoinXpLayout';
 import { CharacterUnequippedEquipmentLayout } from 'src/components/characterSheet/layouts/CharacterUnequippedEquipmentLayout';
+import { CharacterEquipmentLayout } from 'src/components/characterSheet/layouts/CharacterEquipmentLayout';
 
 export const CharacterSheetPage = () => {
   return (
@@ -12,6 +13,7 @@ export const CharacterSheetPage = () => {
       <CharacterTopInfoLayout />
       <CharacterSpecialtiesLayout />
       <CharacterHealthLayout />
+      <CharacterEquipmentLayout />
       <CharacterNotesLayout />
       <CharacterCoinXpLayout />
       <CharacterUnequippedEquipmentLayout />

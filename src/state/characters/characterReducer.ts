@@ -4,7 +4,8 @@ import { initialState } from './inititialState';
 import { characterActionTypes } from './actionTypes';
 
 const {
-  ADD_CHARACTER
+  ADD_CHARACTER,
+  SET_CHARACTER_PROPERTY,
 } = characterActionTypes;
 
 export const CharacterStateKey: string = 'characters';
@@ -24,6 +25,12 @@ export const charactersReducer = (state: CharacterReducerState = initialState, a
           action.payload.character
         ]
       }
+    case SET_CHARACTER_PROPERTY:
+      const { property, value } = action.payload; 
+      const newState: CharacterReducerState = JSON.parse(JSON.stringify(state));
+      newState.characterList[state.selectedCharacter][property] = value;
+
+      return newState
     default:
       return state;
   }

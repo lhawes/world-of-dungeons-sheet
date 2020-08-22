@@ -3,7 +3,7 @@ import { useContext, useMemo } from 'react';
 import { StateContext } from 'src/App';
 import { getSelectedCharacterUnequippedEquipment } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
-import { normalizeData } from 'src/utils/normalizeData';
+import { normalizeData } from 'src/utils/normalizers';
 import { ItemInstance } from 'src/state/models/Item';
 
 export interface UnequippedEquipmentProps {

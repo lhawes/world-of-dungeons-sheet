@@ -8,7 +8,7 @@ import { rootReducer } from './state/rootReducer';
 import { rootInitialState } from './state/rootInitialState';
 import { addCharacterAction } from './state/characters/characterActions';
 import { defaultDispatch } from './utils/defaultDispatch';
-import { normalizeData } from './utils/normalizeData';
+import { normalizeData } from './utils/normalizers';
 import { BodyContainer } from './components/shared/BodyContainer/BodyContainer';
 
 export const StateContext = React.createContext(rootInitialState);
