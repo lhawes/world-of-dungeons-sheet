@@ -9,7 +9,7 @@ export interface SimpleFormHOCProp {
   validator: (v: string) => boolean,
   fieldName: string,
   onChange: (v:any) => void,
-  children: (props: object) => any,
+  children: React.FC<any>,
 }
 
 export const SimpleFormHOC: React.FC<SimpleFormHOCProp> = memo(({ children, fieldName, defaultValue, value, validator, onChange }) => {

@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { useContext, useMemo } from 'react';
-import { StateContext } from 'src/App';
+import { useContext, useMemo, useCallback } from 'react';
+import { StateContext, DispatchContext } from 'src/App';
 import { getSelectedCharacterSkills } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
+import { setCharacterSkillProperty } from 'src/state/characters/characterActions';
+import { Skills } from 'src/state/models/Character';
 
 
 export interface SkillsProps {
@@ -39,6 +41,9 @@ export const CharacterSkills: React.FC<SkillsProps> = ({}) => {
   const state = useContext(StateContext);
   const skills = useMemo(() => getSelectedCharacterSkills(state), [state[CharacterStateKey]]);
 
+  const dispatch = useContext(DispatchContext);
+  const toggleClick = useCallback((active: boolean, skillName: Skills) => () => dispatch(setCharacterSkillProperty({ active, skillName })), [dispatch]);  
+
   return (
     <div css={flexContainer}>
       <div>
@@ -46,11 +51,13 @@ export const CharacterSkills: React.FC<SkillsProps> = ({}) => {
       </div>
       <div css={skillListStyles}>
         {
-          Object.keys(skills).map((skillKey: string) => {
+          Object.keys(skills).map((skillKey: Skills) => {
             return (
-              <div key={skillKey} css={
-                skills[skillKey] ? activeSkillStyle : inactiveSkillStyle
-              }>{ skillKey }</div>
+              <div 
+                key={skillKey} 
+                css={ skills[skillKey] ? activeSkillStyle : inactiveSkillStyle }
+                onClick={toggleClick(!skills[skillKey], skillKey)}
+              >{ skillKey }</div>
             );
           })
         }

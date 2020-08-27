@@ -1,4 +1,4 @@
-import { CharacterType } from '../models/Character';
+import { CharacterType, Skills, Abilities } from '../models/Character';
 import { AnyAction } from 'src/types/anyAction';
 import { characterActionTypes } from './actionTypes';
 import { numberNormalizer } from 'src/utils/normalizers';
@@ -24,6 +24,26 @@ export const setCharacterAttribute = (attributeScore: string, attributeName: str
     payload: {
       name: attributeName,
       score: numberNormalizer(attributeScore),
+    }
+  }
+}
+
+export const setCharacterSkillProperty = ({ active, skillName }: { active: boolean, skillName: Skills }) => {
+  return {
+    type: characterActionTypes.SET_CHARACTER_SKILL,
+    payload: {
+      skillName,
+      active,
+    }
+  }
+}
+
+export const setCharacterAbilityProperty = ({ active, abilityName }: { active: boolean, abilityName: Abilities }) => {
+  return {
+    type: characterActionTypes.SET_CHARACTER_ABILITY,
+    payload: {
+      abilityName,
+      active,
     }
   }
 }

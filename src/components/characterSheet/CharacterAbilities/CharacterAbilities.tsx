@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { StateContext } from 'src/App';
+import { StateContext, DispatchContext } from 'src/App';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
-import { useContext, useMemo } from 'react';
+import { useContext, useMemo, useCallback } from 'react';
 import { getSelectedCharacterAbilities } from 'src/state/characters/characterSelectors';
 import { ClericAbilities, FighterAbilities, ThiefAbilities, WizardAbilities, RangerAbilities, Abilities } from 'src/state/models/Character';
 import { SubLayout } from 'src/components/shared/SubLayout/SubLayout';
+import { setCharacterAbilityProperty } from 'src/state/characters/characterActions';
 
 export interface AbilitiesProps {
   [key: string]: any;
@@ -50,12 +51,19 @@ const gridLayout = css({
 });
 
 const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
+  const dispatch = useContext(DispatchContext);
+  const toggleClick = useCallback((active: boolean, abilityName: Abilities ) => () => dispatch(setCharacterAbilityProperty({ active, abilityName })), [dispatch]);  
+
   return (
     <div css={classAbilityContainer}>
       { 
-        abilityList.map((ability) => {
+        abilityList.map((ability: ClassAbility) => {
           const activeStyle = ability.active ? activeClassAbilityItem : {};
-          return (<div key={ability.name} css={[ClassAbilityItem, activeStyle]}>{ ability.name }</div>);
+          return (<div 
+            key={ability.name} 
+            css={[ClassAbilityItem, activeStyle]}
+            onClick={toggleClick(!ability.active, ability.name)}
+          >{ ability.name }</div>);
         }) 
       }
     </div>
