@@ -5,7 +5,7 @@ import { useCallback, FormEvent, memo, useMemo } from 'react';
 
 export interface SimpleFormHOCProp {
   defaultValue: any,
-  value: any,
+  value: unknown,
   validator: (v: string) => boolean,
   fieldName: string,
   onChange: (v:any) => void,

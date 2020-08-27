@@ -1,6 +1,7 @@
 import { CharacterType } from '../models/Character';
 import { AnyAction } from 'src/types/anyAction';
 import { characterActionTypes } from './actionTypes';
+import { numberNormalizer } from 'src/utils/normalizers';
 
 export const addCharacterAction = (character: CharacterType): AnyAction => ({
   type: characterActionTypes.ADD_CHARACTER,
@@ -17,7 +18,15 @@ export const setCharacterPropertyFactory = (property: string, normalizer?: (v: a
   }
 });
 
-const numberNormalizer = (v: string) => +v
+export const setCharacterAttribute = (attributeScore: string, attributeName: string): AnyAction => {
+  return {
+    type: characterActionTypes.SET_CHARACTER_ATTRIBUTE,
+    payload: {
+      name: attributeName,
+      score: numberNormalizer(attributeScore),
+    }
+  }
+}
 
 export const setCharacterNameAction = setCharacterPropertyFactory('name');
 export const setCharacterCoinAction = setCharacterPropertyFactory('coin', numberNormalizer);

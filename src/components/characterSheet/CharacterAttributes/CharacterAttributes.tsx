@@ -1,11 +1,14 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { useMemo, useContext } from 'react';
-import { StateContext } from 'src/App';
+import { useMemo, useContext, useCallback } from 'react';
+import { StateContext, DispatchContext } from 'src/App';
 import { getSelectedCharacterAttributes } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { AttributeScoreRange, PhysicalAttribute } from 'src/state/models/Character';
 import { MentalAttribute } from '../../../state/models/Character';
+import { SimpleAttributeInput } from 'src/components/shared/SimpleInput/SimpleInput';
+import { setCharacterAttribute } from 'src/state/characters/characterActions';
+import { numberNormalizer } from 'src/utils/normalizers';
 
 interface AttributeBlockProps {
   name: string,
@@ -34,10 +37,26 @@ const attributeScoreStyle = css({
 const attributeBox = css({});
 
 const AttributeBlock: React.FC<AttributeBlockProps> = ({ name, score }) => {
+  const dispatch = useContext(DispatchContext);
+  const setAttribute = useCallback((newScore: string) => {
+    dispatch(setCharacterAttribute(newScore, name))
+  }, [setCharacterAttribute, name, dispatch]);
+
+  const attributeValidator = useCallback((stringScore: string) => {
+    const scoreToCheck = numberNormalizer(stringScore);
+    return scoreToCheck > -1 && scoreToCheck < 4;
+  }, [numberNormalizer]);
+
   return (
     <div css={attributeBox}>
       <div css={attributeScoreStyle}>
-        { score }
+        <SimpleAttributeInput
+            fieldName={name}
+            value={score}
+            defaultValue={'0'}
+            validator={attributeValidator}
+            onChange={setAttribute}
+        />
       </div>
       <div css={attributeNameStyle}>
         { name }

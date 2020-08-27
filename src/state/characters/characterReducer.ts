@@ -6,6 +6,7 @@ import { characterActionTypes } from './actionTypes';
 const {
   ADD_CHARACTER,
   SET_CHARACTER_PROPERTY,
+  SET_CHARACTER_ATTRIBUTE,
 } = characterActionTypes;
 
 export const CharacterStateKey: string = 'characters';
@@ -16,6 +17,8 @@ export interface CharacterReducerState {
 }
 
 export const charactersReducer = (state: CharacterReducerState = initialState, action: AnyAction) => {
+  const newState: CharacterReducerState = JSON.parse(JSON.stringify(state));
+console.log('reducer', action)
   switch (action.type) {
     case ADD_CHARACTER:
       return {
@@ -25,12 +28,17 @@ export const charactersReducer = (state: CharacterReducerState = initialState, a
           action.payload.character
         ]
       }
+
     case SET_CHARACTER_PROPERTY:
       const { property, value } = action.payload; 
-      const newState: CharacterReducerState = JSON.parse(JSON.stringify(state));
       newState.characterList[state.selectedCharacter][property] = value;
+      return newState;
 
-      return newState
+    case SET_CHARACTER_ATTRIBUTE:
+      const { name, score } = action.payload; 
+      newState.characterList[state.selectedCharacter].attributes[name] = score;
+      return newState;
+
     default:
       return state;
   }

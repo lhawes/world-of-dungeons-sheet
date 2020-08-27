@@ -10,3 +10,5 @@ export const numberValidator = (v: string, options?: { low: number, high: number
   }
   return true;
 };
+
+export const numberNormalizer = (v: string) => +v;
