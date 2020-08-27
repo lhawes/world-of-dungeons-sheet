@@ -28,6 +28,18 @@ export const rawCharacterData: CharacterConfigType = {
     itemClassification: ItemClassificationType.martialWeapon,
     armor: null,
   },{
+  //   name: 'Full Armor',
+  //   cost: 60,
+  //   packable: true, 
+  //   damage: null, 
+  //   description: 'Always includes a helm. Makes it very hard to run, move quietly, swim, leap etc.',
+  //   itemClassification: ItemClassificationType.lightArmor,
+  //   armor: {
+  //     base: 2,
+  //     bonus: 0,
+  //     class: ArmorWeight.full,
+  //   },
+  }, {
     name: 'Leather Armor',
     cost: 24,
     packable: true, 
