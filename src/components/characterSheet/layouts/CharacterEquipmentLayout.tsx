@@ -5,7 +5,7 @@ import { whiteScoopOffset, grayScoopBackground } from 'src/sharedStyles/grayScoo
 import { Section } from 'src/components/shared/Section/Section';
 
 import { Weapons } from '../Weapons/Weapons';
-import { PackEquipment } from '../Equipment/Equipment';
+import { PackEquipment } from '../PackEquipment/PackEquipment';
 
 const CharacterWeaponsLayout = css({
   gridColumn: 1,

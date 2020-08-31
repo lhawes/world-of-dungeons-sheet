@@ -27,7 +27,8 @@ export const rawCharacterData: CharacterConfigType = {
     description: 'Passed down by his Uncle.',
     itemClassification: ItemClassificationType.martialWeapon,
     armor: null,
-  },{
+  },
+  // {
   //   name: 'Full Armor',
   //   cost: 60,
   //   packable: true, 
@@ -39,7 +40,8 @@ export const rawCharacterData: CharacterConfigType = {
   //     bonus: 0,
   //     class: ArmorWeight.full,
   //   },
-  }, {
+  // },
+   {
     name: 'Leather Armor',
     cost: 24,
     packable: true, 
