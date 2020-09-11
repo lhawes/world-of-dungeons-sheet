@@ -14,8 +14,8 @@ export const Navigation: React.FC<NavigationProps> = ({ pages }) => {
     <Router>
       <ul>
         { pages.map(({ route, name }) => (
-          <li>
-            <Link to={route} key={`${name}-link`}>{ name }</Link>
+          <li key={`${name}-link`}>
+            <Link to={route}>{ name }</Link>
           </li>
         ))}
       </ul>
