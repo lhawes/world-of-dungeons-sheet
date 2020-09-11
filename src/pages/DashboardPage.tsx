@@ -3,10 +3,11 @@ import { BodyContainer } from 'src/components/shared/BodyContainer/BodyContainer
 
 export const DashboardPage = () => {
   return (
-    <BodyContainer>
-      TODO: Upload character sheet
-      TODO: Export character sheet
-      TODO: Character creation
+    <BodyContainer title='Dashboard'>
+      TODO: Upload character sheet<br/>
+      TODO: Export character sheet<br/>
+      TODO: Character creation<br/>
+      TODO: Select a character<br/>
     </BodyContainer>
   );
 }

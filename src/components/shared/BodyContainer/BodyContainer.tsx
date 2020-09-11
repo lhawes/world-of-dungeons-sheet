@@ -8,10 +8,15 @@ const bodyContainerCss = css`
   flex-direction: column;
 `
 
-export const BodyContainer: React.FC = ({ children }) => {
+export interface BodyContainerProps {
+  title: string;
+
+}
+
+export const BodyContainer: React.FC<BodyContainerProps> = ({ children, title }) => {
   return (
     <div className={bodyContainerCss}>
-      <h3>World of Dungeons</h3>
+      <h3>{title}</h3>
       { children }
     </div>
   );

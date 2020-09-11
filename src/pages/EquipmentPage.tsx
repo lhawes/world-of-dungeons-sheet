@@ -5,7 +5,7 @@ import { BodyContainer } from 'src/components/shared/BodyContainer/BodyContainer
 
 export const EquipmentPage = () => {
   return (
-    <BodyContainer>
+    <BodyContainer title='Character Equipment'>
       <CharacterEquipmentLayout />
       <CharacterUnequippedEquipmentLayout />
       TODO: Section to add equipment to character

@@ -3,6 +3,7 @@ import { CharacterSheetPage } from './CharacterSheetPage';
 import { EquipmentPage } from './EquipmentPage';
 import { DashboardPage } from './DashboardPage';
 import { RulesOverviewPage } from './RulesOverviewPage';
+import { NotFoundPage } from './NotFoundPage';
 
 export interface Page {
   name: string, 
@@ -10,7 +11,13 @@ export interface Page {
   component: any,
 }
 
-export const pages: Page[] = [
+const catchAllRoute =   {
+  name: 'Nothing Here',
+  route: Routes.catchAll,
+  component: NotFoundPage,
+}
+
+export const navigationPages: Page[] = [
   {
     name: 'Character Sheet',
     route: Routes.characterSheet,
@@ -32,3 +39,5 @@ export const pages: Page[] = [
     component: RulesOverviewPage,
   },
 ]
+
+export const allPages: Page[] = [ ...navigationPages, catchAllRoute];

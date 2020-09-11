@@ -14,6 +14,7 @@ export interface SkillsProps {
 
 const skillStyle = css`
   width: 100%;
+  cursor: pointer;
 `;
 
 const activeSkillStyle = css`

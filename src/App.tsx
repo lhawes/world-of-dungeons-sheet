@@ -12,7 +12,7 @@ import {
   Route,
 } from 'react-router-dom';
 import { Navigation } from './components/navigation/navigation';
-import { pages } from './pages/pageRouting';
+import { navigationPages, allPages } from './pages/pageRouting';
 // import { DebugComponent } from './components/shared/debug';
 // import { normalizeData } from './utils/normalizers';
 
@@ -31,14 +31,11 @@ const App = () => {
     <DispatchContext.Provider value={dispatch}>
       <StateContext.Provider value={state}>
         <HashRouter>
-          <Navigation pages={pages} />
+          <Navigation pages={navigationPages} />
           <Switch>
-            { pages.map(({ component, route, name }) => (
+            { allPages.map(({ component, route, name }) => (
                 <Route exact={true} path={route} key={`${name}-route`} component={component}/>
             )) }
-            <Route path='*'>
-              <p>Nothing here</p>
-            </Route>
           </Switch>
         </HashRouter>
         {/* <DebugComponent>

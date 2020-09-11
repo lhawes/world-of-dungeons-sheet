@@ -3,4 +3,5 @@ export enum Routes {
   rulesOverview = '/overview',
   equipment = '/equipment',
   dashboard = '/dashboard',
+  catchAll = '*',
 }

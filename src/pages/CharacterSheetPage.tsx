@@ -10,7 +10,7 @@ import { BodyContainer } from 'src/components/shared/BodyContainer/BodyContainer
 
 export const CharacterSheetPage = () => {
   return (
-    <BodyContainer>
+    <BodyContainer title='Character Sheet'>
       <CharacterTopInfoLayout />
       <CharacterSpecialtiesLayout />
       <CharacterHealthLayout />

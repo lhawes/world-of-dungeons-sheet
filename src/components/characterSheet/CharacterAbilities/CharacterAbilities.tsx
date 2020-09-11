@@ -37,7 +37,12 @@ const ClassAbilityItem = css({
 
 const activeClassAbilityItem = css({
   color: 'black',
+  cursor: 'pointer',
 });
+
+const inactiveClassAbilityItem = css({
+  cursor: 'pointer',
+})
 
 const classAbilityContainer = css({
   ':not(:last-child)': {
@@ -47,7 +52,7 @@ const classAbilityContainer = css({
 
 const gridLayout = css({
   gridTemplateColumns: `1fr`,
-  gridTemplateRows: '1fr 1fr 1fr 1fr 1fr',
+  gridTemplateRows: ' 20px 1fr 1fr 1fr 1fr 1fr',
 });
 
 const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
@@ -58,7 +63,7 @@ const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) =>
     <div css={classAbilityContainer}>
       { 
         abilityList.map((ability: ClassAbility) => {
-          const activeStyle = ability.active ? activeClassAbilityItem : {};
+          const activeStyle = ability.active ? activeClassAbilityItem : inactiveClassAbilityItem;
           return (<div 
             key={ability.name} 
             css={[ClassAbilityItem, activeStyle]}
