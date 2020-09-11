@@ -39,7 +39,6 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({ item }) => {
     ? ` + ${armor.bonus}`
     : null;
 
-
   return (
     <div key={uuid} css={equipmentCardStyle}>
       <p>{ name } | { itemClassification } { showEquipped }{ showQuantity }</p>
