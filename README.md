@@ -3,6 +3,7 @@ Under construction
 
 ## TODO MVP
 ### MVP
+- Figure out leveling up
 - UI overhaul for aesthetics
 - Add / remove items
 - Character creation process

@@ -1,39 +1,23 @@
 import * as React from 'react';
 import './App.css';
 import { UserData } from './state/data/exampleUser'
-import { CharacterSheetPage } from './pages/CharacterSheetPage';
 import { useReducer, useEffect } from 'react';
 import { rootReducer } from './state/rootReducer';
 import { rootInitialState } from './state/rootInitialState';
 import { addCharacterAction } from './state/characters/characterActions';
 import { defaultDispatch } from './utils/defaultDispatch';
-// import { DebugComponent } from './components/shared/debug';
-// import { normalizeData } from './utils/normalizers';
-
 import {
   HashRouter,
   Switch,
   Route,
 } from 'react-router-dom';
-import { Routes } from './constants/routes';
 import { Navigation } from './components/navigation/navigation';
+import { pages } from './pages/pageRouting';
+// import { DebugComponent } from './components/shared/debug';
+// import { normalizeData } from './utils/normalizers';
 
 export const StateContext = React.createContext(rootInitialState);
 export const DispatchContext = React.createContext(defaultDispatch);
-
-export interface Page {
-  name: string, 
-  route: Routes,
-  component: any,
-}
-
-const pages: Page[] = [
-  {
-    name: 'Character Sheet',
-    route: Routes.characterSheet,
-    component: CharacterSheetPage,
-  }
-]
 
 const App = () => {
   const [state, dispatch] = useReducer(rootReducer, rootInitialState);
@@ -50,7 +34,7 @@ const App = () => {
           <Navigation pages={pages} />
           <Switch>
             { pages.map(({ component, route, name }) => (
-                <Route exact={true} path={route} key={name} component={component}/>
+                <Route exact={true} path={route} key={`${name}-route`} component={component}/>
             )) }
             <Route path='*'>
               <p>Nothing here</p>
