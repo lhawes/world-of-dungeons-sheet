@@ -5,9 +5,10 @@ Under construction
 ### MVP
 - Figure out leveling up
 - UI overhaul for aesthetics
-- Add / remove items
-- Character creation process
-- Create saving/loading mechanism for the character sheet + data (local data?)
+- Add / remove items on equipment page
+- Character creation process on dashboard
+- Basic security check
+- Create saving/loading mechanism for the character sheet + data (local data?) on dashboard
 
 ### Extras
 - Tool tip for rules and notes
@@ -25,11 +26,8 @@ Under construction
 - Sharing sheets 
 
 ## Tabs
-- Character select tab, aka DM screen?
-- Character sheet
-- Character sheet pack + equipment store (Inventory management)
-- Equipment overview
-- Skill overview
-- Ability overview
-- Magic overview?
-- Advancement screen (Part of leveling?)
+- Character sheet Page (everything needed for the active character)
+- Equipment Page (all of the active character's equipment and adding / removing equipment)
+- Rules Overview (leveing table, info about magic, skills and rules)
+- Dashboard (export/upload character, select active character, character creation)
+- 404 page (catch all)

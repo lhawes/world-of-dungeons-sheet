@@ -4,7 +4,6 @@ import { CharacterSpecialtiesLayout } from 'src/components/characterSheet/layout
 import { CharacterHealthLayout } from 'src/components/characterSheet/layouts/CharacterHealthLayout';
 import { CharacterNotesLayout } from 'src/components/characterSheet/layouts/CharacterNotesLayout';
 import { CharacterCoinXpLayout } from 'src/components/characterSheet/layouts/CharacterCoinXpLayout';
-import { CharacterUnequippedEquipmentLayout } from 'src/components/characterSheet/layouts/CharacterUnequippedEquipmentLayout';
 import { CharacterEquipmentLayout } from 'src/components/characterSheet/layouts/CharacterEquipmentLayout';
 import { BodyContainer } from 'src/components/shared/BodyContainer/BodyContainer';
 
@@ -17,7 +16,6 @@ export const CharacterSheetPage = () => {
       <CharacterEquipmentLayout />
       <CharacterNotesLayout />
       <CharacterCoinXpLayout />
-      <CharacterUnequippedEquipmentLayout />
     </BodyContainer>
   );
 }
