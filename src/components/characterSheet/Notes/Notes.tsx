@@ -25,7 +25,7 @@ export const Notes: React.FC<NotesProps> = ({}) => {
 
   return (<>
       <div>
-        Character Name
+        Notes
       </div>
       <div>
         { <SimpleTextArea

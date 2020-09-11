@@ -12,6 +12,7 @@ const simpleTextAreaStyle = css({
     borderBottom: '1px solid black',
     marginBottom: 0,
   },
+  width: '100%',
 })
 
 interface TextAreaProps {
