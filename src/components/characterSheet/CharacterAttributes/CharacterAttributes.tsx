@@ -67,7 +67,7 @@ const AttributeBlock: React.FC<AttributeBlockProps> = ({ name, score }) => {
 
 const attributeContainerStyle = css({
   display: 'flex',
-  'flex-direction': 'row wrap',
+  flexDirection: 'row',
   backgroundColor: '#fff',
 });
 
@@ -77,7 +77,7 @@ const attributeColumnStyle = css({
 
 const flexContainer = css({
   display: 'flex',
-  'flex-direction': 'column',
+  flexDirection: 'column',
   height: '100%',
 });
 
