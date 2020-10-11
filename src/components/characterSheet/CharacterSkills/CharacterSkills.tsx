@@ -4,7 +4,7 @@ import { useContext, useMemo, useCallback } from 'react';
 import { StateContext, DispatchContext } from 'src/App';
 import { getSelectedCharacterSkills } from 'src/state/characters/characterSelectors';
 import { CharacterStateKey } from 'src/state/characters/characterReducer';
-import { setCharacterSkillProperty } from 'src/state/characters/characterActions';
+import { setCharacterSkillPropertyAction } from 'src/state/characters/characterActions';
 import { Skills } from 'src/state/models/Character';
 
 
@@ -43,7 +43,7 @@ export const CharacterSkills: React.FC<SkillsProps> = ({}) => {
   const skills = useMemo(() => getSelectedCharacterSkills(state), [state[CharacterStateKey]]);
 
   const dispatch = useContext(DispatchContext);
-  const toggleClick = useCallback((active: boolean, skillName: Skills) => () => dispatch(setCharacterSkillProperty({ active, skillName })), [dispatch]);  
+  const toggleClick = useCallback((active: boolean, skillName: Skills) => () => dispatch(setCharacterSkillPropertyAction({ active, skillName })), [dispatch]);  
 
   return (
     <div css={flexContainer}>

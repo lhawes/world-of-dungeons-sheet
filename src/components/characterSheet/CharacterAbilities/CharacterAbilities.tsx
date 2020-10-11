@@ -6,7 +6,7 @@ import { useContext, useMemo, useCallback } from 'react';
 import { getSelectedCharacterAbilities } from 'src/state/characters/characterSelectors';
 import { ClericAbilities, FighterAbilities, ThiefAbilities, WizardAbilities, RangerAbilities, Abilities } from 'src/state/models/Character';
 import { SubLayout } from 'src/components/shared/SubLayout/SubLayout';
-import { setCharacterAbilityProperty } from 'src/state/characters/characterActions';
+import { setCharacterAbilityPropertyAction } from 'src/state/characters/characterActions';
 
 export interface AbilitiesProps {
   [key: string]: any;
@@ -57,7 +57,7 @@ const gridLayout = css({
 
 const ClassAbilityBlock: React.FC<ClassAbilityBlockProps> = ({ abilityList }) => {
   const dispatch = useContext(DispatchContext);
-  const toggleClick = useCallback((active: boolean, abilityName: Abilities ) => () => dispatch(setCharacterAbilityProperty({ active, abilityName })), [dispatch]);  
+  const toggleClick = useCallback((active: boolean, abilityName: Abilities ) => () => dispatch(setCharacterAbilityPropertyAction({ active, abilityName })), [dispatch]);  
 
   return (
     <div css={classAbilityContainer}>

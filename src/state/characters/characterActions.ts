@@ -18,7 +18,7 @@ export const setCharacterPropertyFactory = (property: string, normalizer?: (v: a
   }
 });
 
-export const setCharacterAttribute = (attributeScore: string, attributeName: string): AnyAction => {
+export const setCharacterAttributeAction = (attributeScore: string, attributeName: string): AnyAction => {
   return {
     type: characterActionTypes.SET_CHARACTER_ATTRIBUTE,
     payload: {
@@ -28,7 +28,7 @@ export const setCharacterAttribute = (attributeScore: string, attributeName: str
   }
 }
 
-export const setCharacterSkillProperty = ({ active, skillName }: { active: boolean, skillName: Skills }) => {
+export const setCharacterSkillPropertyAction = ({ active, skillName }: { active: boolean, skillName: Skills }): AnyAction => {
   return {
     type: characterActionTypes.SET_CHARACTER_SKILL,
     payload: {
@@ -38,7 +38,7 @@ export const setCharacterSkillProperty = ({ active, skillName }: { active: boole
   }
 }
 
-export const setCharacterAbilityProperty = ({ active, abilityName }: { active: boolean, abilityName: Abilities }) => {
+export const setCharacterAbilityPropertyAction = ({ active, abilityName }: { active: boolean, abilityName: Abilities }): AnyAction => {
   return {
     type: characterActionTypes.SET_CHARACTER_ABILITY,
     payload: {
@@ -54,14 +54,12 @@ export const setCharacterNotesAction = setCharacterPropertyFactory('notes');
 export const setCharacterXpAction = setCharacterPropertyFactory('xp', numberNormalizer);
 export const setCharacterCurrentHitPointsAction = setCharacterPropertyFactory('currentHitPoints', numberNormalizer);
 
-export const addItemToCharacterAction = ({ id }: { id: string }) => {
-  console.log('add item to character ', id)
-  return {
-    type: characterActionTypes.ADD_ITEM_TO_CHARACTER,
-    payload: {
-      id
-        // add the item as an item instance to the character
-        // add it to the currently selected character.
-    }
-  }
-}
+export const addItemToCharacterAction = ({ id }: { id: string }): AnyAction => ({
+  type: characterActionTypes.ADD_ITEM_TO_CHARACTER,
+  payload: id
+})
+
+export const removeItemFromCharacterAction = (id: string): AnyAction => ({
+  type: characterActionTypes.REMOVE_ITEM_FROM_CHARACTER,
+  payload: id,
+})

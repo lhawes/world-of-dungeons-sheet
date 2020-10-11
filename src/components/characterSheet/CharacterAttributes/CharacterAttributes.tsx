@@ -7,7 +7,7 @@ import { CharacterStateKey } from 'src/state/characters/characterReducer';
 import { AttributeScoreRange, PhysicalAttribute } from 'src/state/models/Character';
 import { MentalAttribute } from '../../../state/models/Character';
 import { SimpleAttributeInput } from 'src/components/shared/SimpleInput/SimpleInput';
-import { setCharacterAttribute } from 'src/state/characters/characterActions';
+import { setCharacterAttributeAction } from 'src/state/characters/characterActions';
 import { numberNormalizer } from 'src/utils/normalizers';
 
 interface AttributeBlockProps {
@@ -39,8 +39,8 @@ const attributeBox = css({});
 const AttributeBlock: React.FC<AttributeBlockProps> = ({ name, score }) => {
   const dispatch = useContext(DispatchContext);
   const setAttribute = useCallback((newScore: string) => {
-    dispatch(setCharacterAttribute(newScore, name))
-  }, [setCharacterAttribute, name, dispatch]);
+    dispatch(setCharacterAttributeAction(newScore, name))
+  }, [setCharacterAttributeAction, name, dispatch]);
 
   const attributeValidator = useCallback((stringScore: string) => {
     const scoreToCheck = numberNormalizer(stringScore);

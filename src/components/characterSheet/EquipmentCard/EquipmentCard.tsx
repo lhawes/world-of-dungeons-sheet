@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import { ItemInstance } from 'src/state/models/Item';
-import { Fragment } from 'react';
+import { Fragment, useCallback } from 'react';
 
 export const equipmentCardStyle = css({
   width: 'calc(50% - 2*10px)',
@@ -12,10 +12,11 @@ export const equipmentCardStyle = css({
 });
 
 interface EquipmentCardProps {
-  item: ItemInstance
+  item: ItemInstance;
+  removeItemFromCharacter?: (id: string) => void;
 }
 
-export const EquipmentCard: React.FC<EquipmentCardProps> = ({ item }) => {
+export const EquipmentCard: React.FC<EquipmentCardProps> = ({ item, removeItemFromCharacter }) => {
   const { 
     uuid,
     name,
@@ -39,8 +40,11 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({ item }) => {
     ? ` + ${armor.bonus}`
     : null;
 
+  const removeItemcb = useCallback(() => removeItemFromCharacter ? removeItemFromCharacter(uuid) : null,[removeItemFromCharacter, uuid])
+
   return (
     <div key={uuid} css={equipmentCardStyle}>
+      { removeItemFromCharacter ? <button onClick={removeItemcb}>Remove Item</button> : null }
       <p>{ name } | { itemClassification } { showEquipped }{ showQuantity }</p>
       { damage ? (
         <Fragment>
