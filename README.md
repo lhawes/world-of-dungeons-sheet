@@ -3,9 +3,12 @@ Under construction
 
 ## TODO MVP
 ### MVP
+- Quantity of item instance
+- Equipment Page needs equipped button
+- Equipment page needs to get filtered better
+- Edit item instance?
 - Figure out leveling up
 - UI overhaul for aesthetics
-- Add / remove items on equipment page
 - Character creation process on dashboard
 - Basic security check
 - Create saving/loading mechanism for the character sheet + data (local data?) on dashboard
