@@ -53,3 +53,15 @@ export const setCharacterCoinAction = setCharacterPropertyFactory('coin', number
 export const setCharacterNotesAction = setCharacterPropertyFactory('notes');
 export const setCharacterXpAction = setCharacterPropertyFactory('xp', numberNormalizer);
 export const setCharacterCurrentHitPointsAction = setCharacterPropertyFactory('currentHitPoints', numberNormalizer);
+
+export const addItemToCharacterAction = ({ id }: { id: string }) => {
+  console.log('add item to character ', id)
+  return {
+    type: characterActionTypes.ADD_ITEM_TO_CHARACTER,
+    payload: {
+      id
+        // add the item as an item instance to the character
+        // add it to the currently selected character.
+    }
+  }
+}
